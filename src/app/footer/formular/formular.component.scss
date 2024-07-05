@@ -1,0 +1,25 @@
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 617px;
+
+}
+.inputs{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 617px;
+}
+.textInput{
+    background-color: black;
+    border: none;
+    border-bottom: 2px solid white;
+    &::placeholder{
+        color: gray; /* Farbe des Platzhaltertexts */
+        opacity: 1;  /* Stellt sicher, dass die Farbe vollständig angewendet wird */
+        }
+}
+  

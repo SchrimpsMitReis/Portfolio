@@ -1,0 +1,19 @@
+section {
+    background-image: url('./../../assets/images/footer_bg.png');
+    background-size: cover;
+    width: 100%;
+    margin: 0;
+    height: 1060px;
+    display: flex;
+    color: white;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    align-items: center;
+}
+
+h1 {
+    font-size: 100px;
+    width: 80%;
+}

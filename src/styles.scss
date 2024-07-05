@@ -1,6 +1,10 @@
-body {
-    background-color: #FFFCF3;
-    width: 100vw;
+body{
     margin: 0;
-    color:black;
 }
+// Fonts
+@font-face {
+    font-family: 'Syne';
+    src: url('./assets/fonts/Syne-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+  }

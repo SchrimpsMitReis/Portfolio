@@ -2,6 +2,10 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { HeadComponent } from './head/head.component';
+import { AboutMeComponent } from './about-me/about-me.component';
+import { MySkillsComponent } from './my-skills/my-skills.component';
+import { PortfolioComponent } from './portfolio/portfolio.component';
+import { FooterComponent } from './footer/footer.component';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +13,11 @@ import { HeadComponent } from './head/head.component';
   imports: [
     CommonModule, 
     RouterOutlet,
-    HeadComponent
+    HeadComponent,
+    AboutMeComponent,
+    MySkillsComponent,
+    PortfolioComponent,
+    FooterComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'

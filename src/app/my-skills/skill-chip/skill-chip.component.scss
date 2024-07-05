@@ -1,0 +1,12 @@
+.skillChip{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    height: 100px;
+    width: 104px;
+    object-fit: cover;
+    img{
+        width: 70px;
+    }
+}

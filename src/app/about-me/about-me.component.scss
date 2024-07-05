@@ -1,0 +1,41 @@
+section{
+    display: flex;
+    flex-direction: column;
+    padding-left: 5em;
+    padding-right: 5em;
+    height: 100vh;
+}
+.content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    img{
+        width: 533px,
+    }
+}
+.textpart{
+    width: 610px;
+    height: 224px;
+    font-size: 23px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    gap: 4em;
+}
+h1{
+    font-size: 78px;
+}
+.borderBtn{
+    width: 213px;
+    height: 68px;
+    border: 4px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pfeil{
+    object-fit: cover;
+    width: 200px;
+    transform: translate(800px);
+}
