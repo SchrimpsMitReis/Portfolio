@@ -1,2 +1,3 @@
 <app-phead></app-phead>
-<app-referenz *ng-for="let project in projects" [proj]="project" ></app-referenz>
+<!-- <app-referenz *ng-for="let project in projects" [proj]="project" ></app-referenz> -->
+<app-referenz *ngFor="let project of projects" [projectName]="project"></app-referenz>

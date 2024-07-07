@@ -10,7 +10,10 @@ import { CommonModule } from '@angular/common';
   templateUrl: './portfolio.component.html',
   styleUrl: './portfolio.component.scss'
 })
-export class PortfolioComponent {
+export class PortfolioComponent implements OnInit{
 
-  projects: string[] = ['Join', 'Pokedex', 'Sharkie','DaBubble']; 
+  projects: string[] = []; 
+  ngOnInit(): void {
+    this.projects = ['proxy', 'proxy2']
+  }
 }
