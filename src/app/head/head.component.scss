@@ -1,7 +1,12 @@
 section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     height: 100vh;
-    filter: saturate(10%);
-    background-color: aquamarine;
+    // background-color: aquamarine;
+    width: 100%;
+    font-family: 'overpass';
 }
 
 .title {
@@ -14,33 +19,41 @@ section {
     align-items: center;
     flex-direction: column;
     width: 80%;
+    h1{
+        font-size: 128px;
+        text-align: center;
+        margin: 0;
+    }
 
 }
 
-h1 {
-    font-family: 'Adventure';
-    font-size: 6em;
-    margin: 0;
-    color: red;
-    filter: drop-shadow(0em 0em 0.05em yellow);
-    // filter: drop-shadow(0em 0em 0.05em blue);
-}
+.myName{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 5px;
+    color: #00BC8F;
 
+    img{
+        height: 4px;
+    }
+}
 p {
-    font-family: 'Normal';
-    font-size: 2em;
+    font-family: 'Overpass';
+    font-size: 48px;
     margin: 0;
-    transform: translateX(120%);
 }
 #scrollDownHead{
     position: absolute;
     right: 2em;
     bottom: 3em;
 }
-app-menu-bar{
-    position: sticky;
+.navbar{
+    position: fixed;
     top: 80px;
-    // left: 50%;
+    left: 50%;
     transform: translateX(-40%);
     width: 100%;
+    z-index: 1;
 }

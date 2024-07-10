@@ -1,3 +1,5 @@
-<app-phead></app-phead>
-<!-- <app-referenz *ng-for="let project in projects" [proj]="project" ></app-referenz> -->
-<app-referenz *ngFor="let project of projects" [projectName]="project"></app-referenz>
+<section>
+    <app-phead></app-phead>
+    <app-referenz *ngFor="let project of projects; let i = index" [arrayLenth]="projects.length" [projIndex]="i" [projectName]="project"></app-referenz>
+
+</section>

@@ -8,5 +8,7 @@
     object-fit: cover;
     img{
         width: 70px;
+        animation: name duration timing-function delay iteration-count direction fill-mode;
     }
 }
+

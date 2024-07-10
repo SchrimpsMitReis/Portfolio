@@ -1,0 +1,9 @@
+section{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+.logo{
+    filter: invert(1);
+}

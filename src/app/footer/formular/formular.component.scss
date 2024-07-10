@@ -4,7 +4,7 @@ form{
     justify-content: space-between;
     align-items: center;
     width: 617px;
-
+    font-family: 'Overpass';
 }
 .inputs{
     display: flex;
@@ -17,9 +17,20 @@ form{
     background-color: black;
     border: none;
     border-bottom: 2px solid white;
+    width: 617px;
+    height: 50px;
+    color: aliceblue;
+    font-family: 'Overpass';
     &::placeholder{
         color: gray; /* Farbe des Platzhaltertexts */
         opacity: 1;  /* Stellt sicher, dass die Farbe vollständig angewendet wird */
         }
 }
-  
+h2{
+    color: #00BC8F;
+    font-size: 32px;
+    line-height: 38.4px;
+}
+.policy{
+    margin-top: 10px;
+}

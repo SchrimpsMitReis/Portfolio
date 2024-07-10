@@ -9,4 +9,11 @@ import { Component } from '@angular/core';
 })
 export class MenuBarComponent {
 
+
+
+
+  burgerMenu(){
+    console.log("Burger Menue");
+    alert('Burger Menue')
+  }
 }
