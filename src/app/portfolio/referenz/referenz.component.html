@@ -1,20 +1,9 @@
 <div class="referenceProject {{test}}">
     <div>
         <img [src]="imageSrc" alt="">
-        <div class="frame">
-            <img class="arrowReferenz" src="./assets/images/pfeil_dia.png" alt="">
-            <div class="infoRef">
-                <h1>Join</h1>
-                <h2 class="subHeadRef">Angular | Typescript | Wurstfach</h2>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-                    Mollitia quidem, sapiente similique alias ipsa, et nisi
-                    repellat exercitationem distinctio animi sequi amet eius 
-                    totam aspernatur, minus natus dolorum fuga vitae!</p>
-                <div class="divBtn">Github</div>
-            </div>        
-        </div>
     </div>
-    <div>
+    <div class="projNumb" [ngClass]="direction ? 'numberPositionLeft' : 'numberPositionRight'">
         <h2>{{ projectNumber }}/{{projectsLength}}</h2>
     </div>
+    <app-info-frame [index]="indexToFrame"></app-info-frame>
 </div>

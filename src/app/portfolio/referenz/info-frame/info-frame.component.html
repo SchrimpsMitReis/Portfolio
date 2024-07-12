@@ -1,14 +1,12 @@
-<section>
+<section [ngClass]="evenIndex ? 'direction' : ''" >
     <div class="frame">
-        <img src="./assets/images/pfeil_dia.png" alt="">
+        <img class="arrowReferenz" [ngClass]="evenIndex ? 'arrowReferenzRight' : 'arrowReferenzLeft'" src="./assets/images/pfeil_dia.png" alt="">
     </div>
-    <div>
-        <h1>Join</h1>
-        <h2>Angular | Typescript | Wurstfach</h2>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-            Mollitia quidem, sapiente similique alias ipsa, et nisi
-            repellat exercitationem distinctio animi sequi amet eius 
-            totam aspernatur, minus natus dolorum fuga vitae!</p>
-        <div>Github</div>
-    </div>
+    <div class="infoRef" [ngClass]="evenIndex ? 'animationLeft' : 'animationRight'">
+        <h1>{{ownProject.title}}</h1>
+        <h2 class="subHeadRef">{{ownKnowledge}}</h2>
+        <p>{{ownProject.description}}</p>
+        <div [ngClass]="evenIndex ? 'slideRight' : 'slideLeft'" class="divBtn">Github</div>
+    </div>        
+
 </section>

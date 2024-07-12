@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { PheadComponent } from './phead/phead.component';
 import { ReferenzComponent } from './referenz/referenz.component';
 import { CommonModule } from '@angular/common';
+import { Project } from '../models/project.model';
+import { ProjectService } from '../services/project.service';
 
 @Component({
   selector: 'app-portfolio',
@@ -12,8 +14,11 @@ import { CommonModule } from '@angular/common';
 })
 export class PortfolioComponent implements OnInit{
 
-  projects: string[] = []; 
+  projects: Project[] = []; 
+  constructor(private projectService: ProjectService){
+
+  }
   ngOnInit(): void {
-    this.projects = ['proxy', 'proxy2']
+    this.projects = this.projectService.getProjects()
   }
 }
