@@ -16,6 +16,7 @@ export class InfoFrameComponent implements OnInit {
   evenIndex: boolean = false;
   ownProject!: Project;
   ownKnowledge!: string;
+  gitURL!: string;
   constructor(private projectService: ProjectService){
     
   }
@@ -23,7 +24,7 @@ export class InfoFrameComponent implements OnInit {
     this.evenIndex = this.index % 2 === 0;
     this.ownProject = this.projectService.getProjects()[this.index]
     this.ownKnowledge = this.getKnowledge(this.ownProject)
-    
+    this.gitURL =this.ownProject.gitLink
   }
   getKnowledge(project: Project){
     let textOutput: string = ""

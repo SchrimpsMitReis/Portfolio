@@ -10,6 +10,11 @@
         }
     }
 }
+.refImage{
+    width: 40em; 
+    height: 25em;
+    object-fit: cover;    
+}
 .switchDirec{
     flex-direction: row-reverse;
 }

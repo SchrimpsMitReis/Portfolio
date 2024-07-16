@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgForm, NgModel } from '@angular/forms';
 
 @Component({
   selector: 'app-formular',
@@ -18,8 +18,23 @@ export class FormularComponent {
     policy: false
   }
 
-  onSubmit(){
-    console.log(this.contactData);
-    
+  onSubmit(ngForm: NgForm) {
+    if (this.contactData.policy) {
+      if (ngForm.valid && ngForm.submitted) {
+        console.log(ngForm);
+        
+      }
+
+    }else{
+      alert("You have Accept the Policy")
+    }
+  }
+  clearInputs() {
+    this.contactData = {
+      name: "",
+      email: "",
+      text: "",
+      policy: false
+    }
   }
 }

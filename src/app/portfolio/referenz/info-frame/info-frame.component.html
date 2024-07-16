@@ -6,7 +6,7 @@
         <h1>{{ownProject.title}}</h1>
         <h2 class="subHeadRef">{{ownKnowledge}}</h2>
         <p>{{ownProject.description}}</p>
-        <div [ngClass]="evenIndex ? 'slideRight' : 'slideLeft'" class="divBtn">Github</div>
+        <a href="{{gitURL}}" target="_blank" [ngClass]="evenIndex ? 'slideRight' : 'slideLeft'" class="divBtn">Github</a>
     </div>        
 
 </section>
