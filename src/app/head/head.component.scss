@@ -19,12 +19,12 @@ section {
     align-items: center;
     flex-direction: column;
     width: 80%;
-    h1{
-        font-size: 128px;
-        text-align: center;
-        margin: 0;
-    }
 
+}
+h1{
+    font-size: 8em;
+    text-align: center;
+    margin: 0;
 }
 
 .myName{
@@ -32,16 +32,16 @@ section {
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
-    gap: 5px;
+    gap: 1em;
     color: #00BC8F;
 
-    img{
-        height: 4px;
-    }
+}
+.vector{
+    height: 0.2em;
 }
 p {
     font-family: 'Overpass';
-    font-size: 48px;
+    font-size: 3.5em;
     margin: 0;
 }
 #scrollDownHead{
@@ -49,6 +49,7 @@ p {
     right: 2em;
     bottom: 3em;
 }
+
 .navbar{
     position: fixed;
     top: 80px;
@@ -56,4 +57,37 @@ p {
     transform: translateX(-40%);
     width: 100%;
     z-index: 1;
+}
+.callToAction{
+    font-size: 1.4em;
+    border: 0.2em solid black;
+    padding: 0.5em 1.0em 0.5em 1.0em;
+    text-align: center;
+    display: none;
+}
+@media (max-width: 690px) {
+    h1{
+        font-size: 4em;
+    }
+    .vector{
+        width: 45%;
+    }
+    p{
+        font-size: 2em;
+    }
+    .callToAction{
+        margin-top: 3em;
+        display: inline;
+    }
+}
+@media (max-width:400px){
+    h1{
+        font-size: 2.3em;
+    }
+    .vector{
+        width: 45%;
+    }
+    p{
+        font-size: 1em;
+    }
 }

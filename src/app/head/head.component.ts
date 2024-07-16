@@ -9,5 +9,8 @@ import { MenuBarComponent } from './menu-bar/menu-bar.component';
   styleUrl: './head.component.scss'
 })
 export class HeadComponent {
-
+  callToAction(){
+    console.log("Send Nudes!");
+    
+  }
 }
