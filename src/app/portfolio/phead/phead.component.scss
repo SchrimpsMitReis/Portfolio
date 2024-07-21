@@ -1,16 +1,43 @@
-h1{
-    font-size: 78px;
-    width: 30%;
+:host {
+    --font-size-heading: 9em;
+    --font-size-text: 2em;
+}
+
+h1 {
+    font-size: var(--font-size-heading);
+    width: 90%;
+    text-align: center;
     margin: 0;
 }
-section{
+
+section {
     display: flex;
+    justify-content: center;
     flex-direction: column;
     align-items: center;
-    margin-top: 60px;
-
 }
-p{
-    width: 30%;
-    font-size: 23px;
+
+p {
+    width: 40%;
+    font-size: var(--font-size-text);
+}
+
+@media (max-width: 690px) {
+    :host {
+        --font-size-heading: 5em;
+        --font-size-text: 2em;
+    }
+    p{
+        width: 90%;
+    }
+}
+
+@media (max-width:400px) {
+    :host {
+        --font-size-heading: 3em;
+        --font-size-text: 1.5em;
+    }
+    p{
+        width: 90%;
+    }
 }

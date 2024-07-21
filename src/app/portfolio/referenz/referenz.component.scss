@@ -1,39 +1,59 @@
-.referenceProject{
+.referenceProject {
     display: flex;
     justify-content: space-between;
-    width: 80vw;
+    flex-direction: row;
+    width: 90vw;
     filter: grayscale(100%);
-    &:hover{
+
+    &:hover {
         filter: grayscale(0%);
-        .frame{
+
+        .frame {
             display: flex;
         }
     }
 }
-.refImage{
-    width: 40em; 
+
+.refImage {
+    width: 40em;
     height: 25em;
-    object-fit: cover;    
+    object-fit: cover;
 }
-.switchDirec{
+
+.switchDirec {
     flex-direction: row-reverse;
 }
-.projNumb{
+
+.projNumb {
     display: flex;
     width: 50%;
 }
-.numberPositionLeft{
+
+.numberPositionLeft {
     justify-content: left;
 }
-.numberPositionRight{
+
+.numberPositionRight {
     justify-content: right;
 }
-h1{
+
+h1 {
     font-size: 78px;
     font-weight: 800;
     line-height: 70px;
 }
-h2{
+
+h2 {
     font-size: 40px;
     font-family: 'Overpass';
 }
+
+@media (max-width: 690px) {
+    :host {}
+
+    .referenceProject {
+        flex-direction: column;
+    }
+}
+
+@media (max-width:400px) {}
