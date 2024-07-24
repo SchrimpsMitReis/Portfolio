@@ -73,16 +73,12 @@ img{
     transform: translateX(0px);
 }
 .infoRef{
-    // position: relative;
-    // left: -650px;
     font-family: 'Syne';
-    // top: 150px;
-    // animation: fadeAppear 0.5s ease-in-out forwards;
     display: none;
     justify-content: center;
     flex-direction: column;
-    // transform: translateX(-500px);
     width: 50%;
+    // background-color: #00BC8F;
 
 }
 .divBtn{
@@ -154,3 +150,20 @@ img{
     0%{transform: translateX(+500px);}
     100%{transform: translateX(0px);}
 }
+// Responsiv
+
+@media (max-width: 690px) {
+    section{
+        position: unset;
+    }
+    .infoRef{
+        display: flex;
+        width: 100% !important;
+        p{
+            width: 100% !important;
+        }
+    }
+}
+
+
+@media (max-width:400px) {}

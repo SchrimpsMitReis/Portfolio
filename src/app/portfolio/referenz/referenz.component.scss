@@ -27,6 +27,7 @@
 .projNumb {
     display: flex;
     width: 50%;
+    // background-color: aqua;
 }
 
 .numberPositionLeft {
@@ -49,11 +50,27 @@ h2 {
 }
 
 @media (max-width: 690px) {
-    :host {}
-
-    .referenceProject {
-        flex-direction: column;
+    .refImage{
+        width: 100%;
+        height: auto;
     }
+    .referenceProject {
+        flex-direction: column-reverse;
+        align-items: center;
+        filter: grayscale(0);
+    }
+    .numberPositionLeft {
+        justify-content: left;
+    }
+    
+    .numberPositionRight {
+        justify-content: right;
+    }
+    .projNumb {
+        width: 100%;
+    }
+
 }
+
 
 @media (max-width:400px) {}

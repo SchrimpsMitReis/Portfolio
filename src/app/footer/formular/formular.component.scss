@@ -3,22 +3,23 @@ form{
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: 617px;
+    // width: 100%;
     font-family: 'Overpass';
     color: white;
+    // background-color: bisque;
 }
 .inputs{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: 617px;
+    width: 100%;
 }
 .textInput{
     background-color: black;
     border: none;
     border-bottom: 2px solid white;
-    width: 617px;
+    width: 100%;
     height: 50px;
     color: aliceblue;
     font-family: 'Overpass';
@@ -29,9 +30,29 @@ form{
 }
 h2{
     color: #00BC8F;
-    font-size: 32px;
+    font-size: 2.5em;
     line-height: 38.4px;
 }
 .policy{
-    margin-top: 10px;
+    margin-top: 1em;
+}
+
+@media (max-width: 690px) {
+
+}
+
+
+@media (max-width:400px) {
+    form{
+        width: 100%;
+    }
+    h2{
+        font-size: 1.5em;
+    }
+    p{
+        width: 100%;
+    }
+    .inputs{
+        width: 80%;
+    }
 }

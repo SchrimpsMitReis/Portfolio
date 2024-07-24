@@ -1,9 +1,7 @@
 <div class="referenceProject {{test}}">
-    <div>
-        <img class="refImage" [src]="imageSrc" alt="">
-    </div>
+    <app-info-frame [index]="indexToFrame"></app-info-frame>
+    <img class="refImage" [src]="imageSrc" alt="">
     <div class="projNumb" [ngClass]="direction ? 'numberPositionLeft' : 'numberPositionRight'">
         <h2>{{ projectNumber }}/{{projectsLength}}</h2>
     </div>
-    <app-info-frame [index]="indexToFrame"></app-info-frame>
 </div>

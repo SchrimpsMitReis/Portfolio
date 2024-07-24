@@ -2,10 +2,11 @@
 
 $value: 30em;
 $fontSizeHeading: 3.1em;
+
 //Klassen
-:host{
+:host {
     --font-size-heading: 5.1em;
-    --position-arrow: 30em; 
+    --position-arrow: 30em;
 }
 
 section {
@@ -14,9 +15,9 @@ section {
     align-items: center;
     // padding-left: 5em;
     // padding-right: 5em;
-    height: 100vh;
-    padding-top: 5em;
-    padding-bottom: 5em;
+    // height: 100vh;
+    // padding-top: 5em;
+    // padding-bottom: 5em;
 }
 
 .content {
@@ -26,8 +27,8 @@ section {
     width: 90%;
     gap: 2em;
     height: max-content;
-
 }
+
 img {
     width: 35em;
     // position: relative;
@@ -38,6 +39,7 @@ img {
 
     }
 }
+
 .frame {
     display: inline-block;
     position: relative;
@@ -48,6 +50,7 @@ img {
     border: 0.4em solid rgba(0, 0, 0, 0);
     background-color: aqua;
     z-index: 1;
+
     &:hover {
         cursor: pointer;
         border: 0.4em solid black;
@@ -57,7 +60,6 @@ img {
 
 .textpart {
     // width: 610px;
-    background-color: aqua;
     // height: 224px;
     font-size: 1.5em;
     display: flex;
@@ -70,7 +72,6 @@ img {
 h1 {
     font-size: var(--font-size-heading);
     margin: 0;
-    background-color: antiquewhite;
     width: 90%;
 }
 
@@ -86,50 +87,63 @@ p {
     justify-content: center;
     align-items: center;
 }
+
 .pfeil {
     object-fit: cover;
     width: 13em;
     // transform: translateX(--position-arrow);
-
-    animation-name: arrowSide ;
+    transform: translateX(30vw);
+    animation-name: arrowSide;
     animation-duration: 1s;
     animation-iteration-count: 1;
 
 }
+
 @keyframes arrowSide {
-    0%{transform: translateX(--position-arrow) translateY(0em);}
-    100%{transform: translateX(--position-arrow - 10) translateY(10em);}
+    0% {
+        transform: translateX(--position-arrow) translateY(0em);
+    }
+
+    100% {
+        transform: translateX(--position-arrow - 10) translateY(10em);
+    }
 }
 
 @media (max-width: 690px) {
-    :host{
+    :host {
         --font-size-heading: 3.4em;
         --position-arrow: 110em;
     }
-    section{
-        
-    }
-    .content{
+
+    .content {
         flex-direction: column;
         justify-content: center;
         gap: 6em;
+        align-items: center;
+
     }
-    .borderBtn{
+
+    .borderBtn {
         display: none;
     }
-    
-    .pfeil{
-        transform: translateX(--position-arrow);
+
+    .pfeil {
+        transform: translate(0);
+        width: 8em;
+
     }
-    h1{
+
+    h1 {
         text-align: center;
     }
 }
-@media (max-width:400px){
-    :host{
+
+@media (max-width:400px) {
+    :host {
         --font-size-heading: 2.2em;
     }
-    img{
+
+    img {
         width: 20em;
     }
 }
