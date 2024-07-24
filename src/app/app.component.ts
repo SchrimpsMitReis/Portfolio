@@ -25,4 +25,7 @@ import { NgModel } from '@angular/forms';
 })
 export class AppComponent {
   title = 'Portfolio';
+
+
+  
 }
