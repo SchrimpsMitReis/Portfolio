@@ -28,7 +28,7 @@ export class FormularComponent {
     body: (payload: any) => JSON.stringify(payload),
     options: {
       headers: {
-        'Content-Type': 'text/plain',
+        'Content-Type': 'text/html',
         responseType: 'text',
       },
     },
@@ -56,6 +56,7 @@ export class FormularComponent {
       alert("You have Accept the Policy")
     }
   }
+
   clearInputs() {
     this.contactData = {
       name: "",

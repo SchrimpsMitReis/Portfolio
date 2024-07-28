@@ -11,8 +11,4 @@ export class AboutMeComponent {
 
 
 
-  letsTalkBtn(){
-    console.log("Let's Talk");
-    
-  }
 }

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { MenuSwitch } from '../../services/menuSwitch.service';
 @Component({
   selector: 'app-menu-bar',
   standalone: true,
@@ -9,11 +9,7 @@ import { Component } from '@angular/core';
 })
 export class MenuBarComponent {
 
+  constructor(private menuSwitch: MenuSwitch){}
 
 
-
-  burgerMenu(){
-    console.log("Burger Menue");
-    alert('Burger Menue')
-  }
 }

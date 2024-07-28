@@ -26,10 +26,10 @@ section{
 }
 h1{
     font-size: var(--font-size-heading);
-    position: relative;
-    top: 50px;
-    left: 50%;
-    transform: translateX(-100%);
+    // position: relative;
+    // top: 50px;
+    // left: 50%;
+    transform: translateY(50%);
     z-index: 2;
     background-color: #FFFCF3;
     padding-left: 1em;

@@ -1,12 +1,9 @@
 import { Component, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { HeadComponent } from './head/head.component';
-import { AboutMeComponent } from './about-me/about-me.component';
-import { MySkillsComponent } from './my-skills/my-skills.component';
-import { PortfolioComponent } from './portfolio/portfolio.component';
-import { FooterComponent } from './footer/footer.component';
 import { NgModel } from '@angular/forms';
+import { MenuOverlayComponent } from './menu-overlay/menu-overlay.component';
+import { MainPageComponent } from './main-page/main-page.component';
 
 @Component({
   selector: 'app-root',
@@ -14,11 +11,8 @@ import { NgModel } from '@angular/forms';
   imports: [
     CommonModule, 
     RouterOutlet,
-    HeadComponent,
-    AboutMeComponent,
-    MySkillsComponent,
-    PortfolioComponent,
-    FooterComponent,
+    MenuOverlayComponent,
+    MainPageComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
@@ -26,6 +20,6 @@ import { NgModel } from '@angular/forms';
 export class AppComponent {
   title = 'Portfolio';
 
-
+  
   
 }
