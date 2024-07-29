@@ -1,6 +1,6 @@
 :host {
     --font-size-heading: 9em;
-    --font-size-text: 2em;
+    --font-size-text: 1.5em;
 }
 
 h1 {
@@ -15,11 +15,14 @@ section {
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    width: 100%;
 }
 
 p {
-    width: 40%;
+    width: 90%;
     font-size: var(--font-size-text);
+    font-family: 'Overpass';
+    line-height: 1.5em;
 }
 
 @media (max-width: 690px) {

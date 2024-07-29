@@ -1,5 +1,5 @@
 <section [ngClass]="evenIndex ? 'direction' : ''" >
-    <div class="frame">
+    <div class="frame" [ngClass]="evenIndex ? 'frameRight' : 'frameLeft'">
         <img class="arrowReferenz" [ngClass]="evenIndex ? 'arrowReferenzRight' : 'arrowReferenzLeft'" src="./assets/images/pfeil_dia.png" alt="">
     </div>
     <div class="infoRef" [ngClass]="evenIndex ? 'animationLeft' : 'animationRight'">

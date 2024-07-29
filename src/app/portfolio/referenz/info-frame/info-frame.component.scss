@@ -16,13 +16,19 @@ section{
     }
 }
 .frame{
-    position: relative;
-    top: 10px;
-    left: 10px;
     width: 620px;
     height: 393px;
+    position: relative;
     border: 5px solid black;
     display: none;
+}
+.frameRight{
+    top: 10px;
+    left: -8%;
+}
+.frameLeft{
+    top: 10px;
+    left: 6%;
 }
 .direction{
     flex-direction: row-reverse;
@@ -151,7 +157,14 @@ img{
     100%{transform: translateX(0px);}
 }
 // Responsiv
-
+@media (max-width:1500px) {
+    .frameRight{
+        left: -4%;
+    }
+    .frameLeft{
+        left: 1%;
+    }    
+}
 @media (max-width: 690px) {
     section{
         position: unset;

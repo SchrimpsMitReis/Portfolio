@@ -5,11 +5,10 @@ section{
     justify-content: space-around;
     align-items: center;
     gap: 40px;
+    margin-top: 13em;
 }
 
 @media (max-width: 690px) {
-    :host{
-    }
     section{
         margin-top: 10em;
     }
