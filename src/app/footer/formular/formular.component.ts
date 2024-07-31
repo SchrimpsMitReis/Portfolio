@@ -25,7 +25,7 @@ export class FormularComponent {
 
   post = {
 
-    endPoint: 'http://roman-schroeder.com/sendMail.php',
+    endPoint: 'https://roman-schroeder.com/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
     options: {
       headers: {
