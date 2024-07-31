@@ -24,14 +24,20 @@ export class ReferenzComponent implements OnInit{
   projectsLength!: string;
   ngOnInit(){
     
-    this.imageSrc = `./assets/images/${this.projectData.title.toLowerCase()}Project.png`;
+    this.imageSrc = `"./assets/images/${this.projectData.title.toLowerCase()}Project.png"`;
     this.projectNumber = this.formatNumber(this.projIndex + 1)
     this.projectsLength = this.formatNumber(this.arrayLenth)
     this.switchDirection()
     this.indexToFrame = this.projIndex;
-    this.direction = this.projIndex%2 === 0
+    this.direction = this.projIndex%2 === 0;
+    this.setBackgroundImage(this.imageSrc)
   }
-
+  setBackgroundImage(imageUrl: string) {
+    const backgroundElement = document.querySelector('.bgImage') as HTMLElement;
+    
+    backgroundElement.style.backgroundImage = `url(${imageUrl})`;
+    console.log("Background Element", backgroundElement.style.backgroundImage);
+  }  
   formatNumber(number: number) : string{
     return number.toString().padStart(2, '0');
   }

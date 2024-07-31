@@ -21,9 +21,10 @@ export class FormularComponent {
     policy: false
   }
 
-  mailTest = false;
+  mailTest = true;
 
   post = {
+
     endPoint: 'http://roman-schroeder.com/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
     options: {
@@ -35,6 +36,7 @@ export class FormularComponent {
   };
 
   onSubmit(ngForm: NgForm) {
+    debugger
     if (this.contactData.policy) {
       if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
         this.http.post(this.post.endPoint, this.post.body(this.contactData))
