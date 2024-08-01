@@ -28,20 +28,15 @@ export class ReferenzComponent implements OnInit{
   description!: string;
   projectsLength!: string;
   evenIndex!: boolean;
+  index!: number;
   
   ngOnInit(){
+    this.index = this.projIndex;
     this.direction = this.projIndex%2 === 0;
-    this.fromProDa()
+    this.fromProData()
     this.counterNumbers()
     this.switchDirection()
-    this.setBackgroundImage(this.imageSrc)
   }
-  setBackgroundImage(imageUrl: string) {
-    const backgroundElement = document.querySelector('.bgImage') as HTMLElement;
-    
-    backgroundElement.style.backgroundImage = `url(${imageUrl})`;
-    console.log("Background Element", backgroundElement.style.backgroundImage);
-  }  
   formatNumber(number: number) : string{
     return number.toString().padStart(2, '0');
   }
@@ -61,12 +56,12 @@ export class ReferenzComponent implements OnInit{
     }
     return textOutput
   }
-  fromProDa(){
+  fromProData(){
     this.description = this.projectData.description;
     this.title = this.projectData.title;
     this.gitURL = this.projectData.gitLink;
     this.knowledge = this.getKnowledge(this.projectData)
-    this.imageSrc = `"./assets/images/${this.projectData.title.toLowerCase()}Project.png"`;
+    this.imageSrc = `./assets/images/${this.projectData.title.toLowerCase()}Project.png`;
   }
   counterNumbers(){
     this.projectNumber = this.formatNumber(this.projIndex + 1)
