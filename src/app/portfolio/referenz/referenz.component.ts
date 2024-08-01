@@ -14,6 +14,7 @@ export class ReferenzComponent implements OnInit{
   @Input() projIndex!: number;
   @Input() projectData!:Project;
   @Input() arrayLenth!: number;
+
   imageSrc!:string;
   indexToFrame!: number;
   width!: number;
@@ -21,15 +22,18 @@ export class ReferenzComponent implements OnInit{
   projectNumber!: string;
   test!: string;
   direction!: boolean;
+  knowledge!: string;
+  title!: string;
+  gitURL!: string;
+  description!: string;
   projectsLength!: string;
+  evenIndex!: boolean;
+  
   ngOnInit(){
-    
-    this.imageSrc = `"./assets/images/${this.projectData.title.toLowerCase()}Project.png"`;
-    this.projectNumber = this.formatNumber(this.projIndex + 1)
-    this.projectsLength = this.formatNumber(this.arrayLenth)
-    this.switchDirection()
-    this.indexToFrame = this.projIndex;
     this.direction = this.projIndex%2 === 0;
+    this.fromProDa()
+    this.counterNumbers()
+    this.switchDirection()
     this.setBackgroundImage(this.imageSrc)
   }
   setBackgroundImage(imageUrl: string) {
@@ -42,8 +46,30 @@ export class ReferenzComponent implements OnInit{
     return number.toString().padStart(2, '0');
   }
   switchDirection(){
-    if (this.projIndex%2 === 0){
+    if (this.direction){
       this.test = "switchDirec" 
     }
+  }
+  getKnowledge(project: Project){
+    let textOutput: string = ""
+    for (let i = 0; i < project.knowledge.length; i++) {
+      textOutput += project.knowledge[i];
+      if (project.knowledge.length  == i + 1){
+      }else{
+        textOutput += " | ";
+      }
+    }
+    return textOutput
+  }
+  fromProDa(){
+    this.description = this.projectData.description;
+    this.title = this.projectData.title;
+    this.gitURL = this.projectData.gitLink;
+    this.knowledge = this.getKnowledge(this.projectData)
+    this.imageSrc = `"./assets/images/${this.projectData.title.toLowerCase()}Project.png"`;
+  }
+  counterNumbers(){
+    this.projectNumber = this.formatNumber(this.projIndex + 1)
+    this.projectsLength = this.formatNumber(this.arrayLenth)
   }
 }

@@ -5,17 +5,15 @@
         </div>
     </div>
     <div class="info">
-        <div class="projNumb" [ngClass]="direction ? 'numberPositionLeft' : 'numberPositionRight'">
-            <h2>{{ projectNumber }}/{{projectsLength}}</h2>
-            <div class="infoRef">
-                <h1>Titel</h1>
-                <h2 class="subHeadRef">All | My | Cool | Skills</h2>
-                <p>This will be the area for describing the Project, Motivation and all about it, may be there is some more text so there is more then enought space avalible for</p>
-                    <!-- <a href="{{gitURL}}" target="_blank" [ngClass]="evenIndex ? 'slideRight' : 'slideLeft'" class="divBtn">Github</a> -->
-            </div>        
-        
+        <div class="infoRef" [ngClass]="direction ? 'numberPositionLeft' : 'numberPositionRight'">
+                <h1>{{title}}</h1>
+                <h2 class="subHeadRef">{{knowledge}}</h2>
+                <p>{{description}}</p>
+                <a href="{{gitURL}}" target="_blank" [ngClass]="direction ? 'slideLeft' : 'slideRight'"
+                    class="divBtn">Github</a>
+
         </div>
     </div>
-    <!-- <app-info-frame [index]="indexToFrame"></app-info-frame>
-    <img class="refImage" [src]="imageSrc" alt="">
-</div>-->
+    <h2>{{ projectNumber }}/{{projectsLength}}</h2>
+
+</div>
