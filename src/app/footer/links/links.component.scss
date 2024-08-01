@@ -2,8 +2,36 @@ section{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 100%;
+    width: 90vw;
+    align-items: center;
+    font-size: 1em;
+}
+img{
+    height: 2em;
+}
+.shareBtns{
+    display: flex;
+    flex-direction: row;
+    gap: 3em;
+
+}
+.imprintLink{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 15em;
+    gap: 1em;
+    p{
+        text-decoration: none;
+        color:white;
+    }
 }
 .logo{
     filter: invert(1);
+}
+@media (max-width: 450px) {
+    section{
+        flex-direction: column;
+        gap: 0.5em;
+    }
 }

@@ -1,16 +1,16 @@
 section {
     background-image: url('./../../assets/images/footer_bg.png');
     background-size: cover;
-    width: 100%;
+    width: 100vw;
     margin: 0;
-    height: 1060px;
+    gap: 5em;
     display: flex;
-    color: white;
     flex-direction: column;
     justify-content: space-between;
+    align-items: center;
+    color: white;
     padding-top: 50px;
     padding-bottom: 50px;
-    align-items: center;
 }
 
 h1 {
@@ -18,19 +18,21 @@ h1 {
     font-size: 8em;
     width: 80%;
 }
-@media (max-width: 690px) {
-    section{
+
+@media (max-width: 850px) {
+    section {
         height: unset;
     }
-    h1{
+
+    h1 {
         font-size: 6em;
     }
 
 }
 
 
-@media (max-width:400px) {
-    h1{
+@media (max-width:650px) {
+    h1 {
         font-size: 3em;
     }
 }
