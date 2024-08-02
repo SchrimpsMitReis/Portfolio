@@ -29,6 +29,7 @@ export class ReferenzComponent implements OnInit{
   projectsLength!: string;
   evenIndex!: boolean;
   index!: number;
+  href!: string;
   
   ngOnInit(){
     this.index = this.projIndex;
@@ -36,6 +37,7 @@ export class ReferenzComponent implements OnInit{
     this.fromProData()
     this.counterNumbers()
     this.switchDirection()
+    this.href = this.getProjectHref()
   }
   formatNumber(number: number) : string{
     return number.toString().padStart(2, '0');
@@ -66,5 +68,8 @@ export class ReferenzComponent implements OnInit{
   counterNumbers(){
     this.projectNumber = this.formatNumber(this.projIndex + 1)
     this.projectsLength = this.formatNumber(this.arrayLenth)
+  }
+  getProjectHref(){
+    return `https://roman-schroeder.com/${this.projectData.title.toLowerCase()}/index.html`
   }
 }
