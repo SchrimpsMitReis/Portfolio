@@ -6,6 +6,7 @@ form{
     // width: 100%;
     font-family: 'Overpass';
     color: white;
+    gap: 2em;
     // background-color: bisque;
 }
 .inputs{
@@ -36,13 +37,43 @@ h2{
 .policy{
     margin-top: 1em;
 }
+button{
+    background-color: black;
+    width: 8em;
+    height: 3em;
+    color: #00BC8F;
+    font-family: 'Overpass' sans-serif;
+    font-size: 1em;
+    outline: none;
+    border: 0.2em solid white;
+    &:hover{
+        background-color: white;
+        cursor: pointer;
+        border-color: black;
+    }
+    &:active{
+        background-color: rgb(168, 168, 168);
+        cursor: pointer;
+        border-color: black;
+    }
+}
+span{
+    font-family: 'Overpass' sans-serif;
+    font-size: 1em;
 
+}
+.policy input{
+    background-color:#00BC8F;
+    width: 1em;
+    height: 1em;
+}
 @media (max-width: 690px) {
     form{
         width: 100%;
     }
     h2{
         font-size: 1.5em;
+        width: 80%;
     }
     p{
         width: 80%;
