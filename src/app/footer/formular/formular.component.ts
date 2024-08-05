@@ -2,11 +2,12 @@ import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
 import { FormsModule, NgForm, NgModel } from '@angular/forms';
+import { DisclaimerComponent } from './disclaimer/disclaimer.component';
 
 @Component({
   selector: 'app-formular',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, DisclaimerComponent],
   templateUrl: './formular.component.html',
   styleUrl: './formular.component.scss'
 })
@@ -21,11 +22,11 @@ export class FormularComponent {
     policy: false
   }
 
-  mailTest = true;
+  mailTest = false;
 
   post = {
 
-    endPoint: 'https://roman-schroeder.com/sendMail.php',
+    endPoint: 'https://www.roman-schroeder.com/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
     options: {
       headers: {
@@ -36,7 +37,6 @@ export class FormularComponent {
   };
 
   onSubmit(ngForm: NgForm) {
-    debugger
     if (this.contactData.policy) {
       if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
         this.http.post(this.post.endPoint, this.post.body(this.contactData))
