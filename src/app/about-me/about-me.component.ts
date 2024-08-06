@@ -16,7 +16,7 @@ export class AboutMeComponent implements OnInit {
   Mit einem Bachelor in Digital Film Making, spezialisiert auf Postproduktion und Inklusion, sowie einer Weiterbildung zum Frontend Developer, 
   bringe ich eine einzigartige Mischung aus Kreativität und technischem Know-how mit.
   Ich freue mich darauf, meine Reise fortzusetzen und bin gespannt auf neue Herausforderungen und Möglichkeiten, bei denen ich meine vielfältigen Fähigkeiten einbringen kann.`
-
+  english: string = `Hi, my name is Roman Schröder, a creative and logic-driven professional from Remagen. Holding a Bachelor's degree in Digital Film Making with a specialization in Postproduction and Inclusion, along with additional training as a Frontend Developer, I bring a unique blend of creativity and technical expertise. I am excited to continue my journey and look forward to new challenges and opportunities where I can apply my diverse skill set.`
   ngOnInit() {
     this.language = navigator.language;
     this.setLang()
@@ -26,7 +26,9 @@ export class AboutMeComponent implements OnInit {
   setLang(){
     if (this.language === "de"){
       this.text = this.deutsch;
-
+    }
+    else{
+      this.text = this.english;
     }
   }
 
