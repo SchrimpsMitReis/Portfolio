@@ -1,12 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
-import { InfoFrameComponent } from './info-frame/info-frame.component';
 import { Project } from '../../models/project.model';
 
 @Component({
   selector: 'app-referenz',
   standalone: true,
-  imports: [CommonModule, InfoFrameComponent],
+  imports: [CommonModule, ],
   templateUrl: './referenz.component.html',
   styleUrl: './referenz.component.scss'
 })
@@ -59,7 +58,7 @@ export class ReferenzComponent implements OnInit{
     return textOutput
   }
   fromProData(){
-    this.description = this.projectData.description;
+    this.description = this.projectData.descriptionGer;
     this.title = this.projectData.title;
     this.gitURL = this.projectData.gitLink;
     this.knowledge = this.getKnowledge(this.projectData)
@@ -71,5 +70,11 @@ export class ReferenzComponent implements OnInit{
   }
   getProjectHref(){
     return `https://roman-schroeder.com/${this.projectData.title.toLowerCase()}/index.html`
+  }
+  getLang(){
+    return navigator.language;
+  }
+  getDescription(){
+    return (this.getLang() === 'de') ? this.projectData.descriptionGer : this.projectData.descriptionEng;
   }
 }
