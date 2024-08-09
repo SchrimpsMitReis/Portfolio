@@ -69,7 +69,7 @@ export class ReferenzComponent implements OnInit{
     this.projectsLength = this.formatNumber(this.arrayLenth)
   }
   getProjectHref(){
-    return `https://roman-schroeder.com/${this.projectData.title.toLowerCase()}/index.html`
+    return `https://roman-schroeder.com/projekte/${this.projectData.title.toLowerCase()}/index.html`
   }
   getLang(){
     return navigator.language;

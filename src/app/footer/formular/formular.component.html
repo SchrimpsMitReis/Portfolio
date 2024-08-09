@@ -1,21 +1,20 @@
 <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
-    <h2>Want to discuss a new project?</h2>
-    <p>Say hello! Let's discuss your ideas and make it happen</p>
+    <h2>{{heading}}</h2>
+    <p>{{subHeading}}</p>
     <div class="inputs">
-        <input  required [(ngModel)]="contactData.name" name="name" class="textInput" type="text" placeholder="Your Name" >
-        <input  required [(ngModel)]="contactData.email" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" name="email" class="textInput" type="email" placeholder="Your Email">
-        <textarea  required #message="ngModel" [(ngModel)]="contactData.text" name="message" class="textInput" placeholder="Your Massege" id=""></textarea>
+        <input  required [(ngModel)]="contactData.name" name="name" class="textInput" type="text" placeholder="{{formFieldNames[0]}}" >
+        <input  required [(ngModel)]="contactData.email" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" name="email" class="textInput" type="email" placeholder="{{formFieldNames[1]}}">
+        <textarea  required #message="ngModel" [(ngModel)]="contactData.text" name="message" class="textInput" placeholder="{{formFieldNames[2]}}" id=""></textarea>
         
         
         <div class="policy">
             <input required [(ngModel)]="contactData.policy" name="policy" type="checkbox" id="policyCheck">
-            <span>I've red the <a href="#">privacy policy</a> and agree to he processing of my data as outlined.</span>
+            <span [innerHTML]="formFieldNames[3]"></span>
         </div>
     </div>
     @if (!message.valid && message.touched && !message.disabled) {
-        <span>Please Enter Message</span>
+        <span>{{formFieldNames[4]}}</span>
     }
-    <button type="submit" value="submit">Absenden</button>
+    <button type="submit" value="submit">{{btnText}}</button>
 </form>
 <app-disclaimer #disclaimer (closed)="onDisclaimerClosed()" ></app-disclaimer>
-<!--   -->
