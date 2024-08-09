@@ -9,25 +9,29 @@ section{
 img{
     height: 2em;
 }
+.logo{
+    height: 4em;
+}
 .shareBtns{
     display: flex;
     flex-direction: row;
     gap: 3em;
 
 }
+a{
+    text-decoration: none;
+    color:white;
+    p{
+        font-size: 2em;
+    }
+}
+
 .imprintLink{
     display: flex;
     flex-direction: row;
     align-items: center;
     width: 15em;
     gap: 1em;
-    p{
-        text-decoration: none;
-        color:white;
-    }
-}
-.logo{
-    filter: invert(1);
 }
 @media (max-width: 450px) {
     section{

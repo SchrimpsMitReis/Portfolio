@@ -58,7 +58,7 @@ export class ReferenzComponent implements OnInit{
     return textOutput
   }
   fromProData(){
-    this.description = this.projectData.descriptionGer;
+    this.description = this.getDescription();
     this.title = this.projectData.title;
     this.gitURL = this.projectData.gitLink;
     this.knowledge = this.getKnowledge(this.projectData)

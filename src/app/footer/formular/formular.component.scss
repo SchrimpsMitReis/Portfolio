@@ -67,6 +67,21 @@ span{
     width: 1em;
     height: 1em;
 }
+.disclaimer{
+    background-color: antiquewhite;
+    width: 50%;
+    height: 30%;
+    position: fixed;
+    top: 50%;
+    border: 0.2em solid #00BC8F;
+    border-radius: 3em;
+}
+.d-none{
+    display: none;
+}
+.d-flex{
+    display: flex !important;
+}
 @media (max-width: 690px) {
     form{
         width: 100%;

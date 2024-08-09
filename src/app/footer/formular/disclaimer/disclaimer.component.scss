@@ -1,0 +1,36 @@
+section {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    color: black;
+    width: 60%;
+    height: 30%;
+    background-color: antiquewhite; 
+    border: 0.3em solid aquamarine;
+    font-family: 'Overpass';
+}
+
+h1 {
+    font-size: 2em;
+}
+
+p {
+    font-size: 1.2em;
+}
+
+button {
+    background-color: rgba(127, 255, 212, 0.463);
+    width: 15em;
+    height: 3em;
+    border: 0.1em solid aquamarine;
+    font-size: 1em;
+    &:hover {
+        background-color: aquamarine;
+        cursor: pointer;
+    }
+}

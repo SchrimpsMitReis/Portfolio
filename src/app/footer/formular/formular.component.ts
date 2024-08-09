@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit, ViewChild } from '@angular/core';
 import { FormsModule, NgForm, NgModel } from '@angular/forms';
 import { DisclaimerComponent } from './disclaimer/disclaimer.component';
 
@@ -9,9 +9,9 @@ import { DisclaimerComponent } from './disclaimer/disclaimer.component';
   standalone: true,
   imports: [CommonModule, FormsModule, DisclaimerComponent],
   templateUrl: './formular.component.html',
-  styleUrl: './formular.component.scss'
+  styleUrls: ['./formular.component.scss']
 })
-export class FormularComponent {
+export class FormularComponent{
 
   http = inject(HttpClient)
 
@@ -21,6 +21,8 @@ export class FormularComponent {
     text: "",
     policy: false
   }
+
+  @ViewChild('disclaimer') disclaimer!: DisclaimerComponent;
 
   mailTest = false;
 
@@ -48,7 +50,10 @@ export class FormularComponent {
             error: (error) => {
               console.error(error);
             },
-            complete: () => console.info('send post complete'),
+            complete: () => {
+              console.info('send post complete'),
+              this.disclaimer.show()
+            }
           });
       } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
   
@@ -67,4 +72,5 @@ export class FormularComponent {
       policy: false
     }
   }
+  onDisclaimerClosed(){}
 }

@@ -20,15 +20,18 @@ export class AboutMeComponent implements OnInit {
   ngOnInit() {
     this.language = navigator.language;
     this.setLang()
-    console.log(this.language);
   }
-
+  
   setLang(){
+    console.log(this.language);
     if (this.language === "de"){
+      
       this.text = this.deutsch;
     }
     else{
       this.text = this.english;
+      console.log("Pip");
+
     }
   }
 
