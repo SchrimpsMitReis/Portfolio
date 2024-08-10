@@ -16,5 +16,26 @@ section {
         background-color:  #FFFCF3;
         filter: drop-shadow(-0.01em 0.01em 0.001em black) ;
         box-sizing: content-box;
+        &:hover{
+            color: #00BC8F;
+            filter: drop-shadow(-0.01em 0.01em 0.001em #00BC8F) ;
+        }
+    }
+}
+@media (max-width: 700px ) {
+    section{
+        a{
+            font-size: 5em;
+        }
+
+    }
+}
+@media (max-width: 400px ) {
+    section{
+        gap: 3em;
+        a{
+            font-size: 3em;
+        }
+
     }
 }

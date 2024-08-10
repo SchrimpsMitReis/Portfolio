@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     flex-direction: row;
-    // width: 90vw;
+    width: 90vw;
     height: 27em;
     filter: grayscale(100%);
 
@@ -29,10 +29,12 @@
     border: 0.3em solid black;
     transform: translate(-1em, 1em);
 }
-a{
+
+a {
     text-decoration: none;
     color: inherit;
 }
+
 .infoRef {
     display: none;
     flex-direction: column;
@@ -45,18 +47,39 @@ a{
 
     .infoRef {
         display: flex;
+        animation: 1s ease-in-out 0s slidein;
+        animation-iteration-count: 1;
+    
     }
 }
-p{
+
+p {
     font-family: 'Overpass';
     font-size: 1.2em;
 }
+
 .info {
     width: 50%;
     margin-bottom: 1em;
     // padding: 1em;
 }
-.divBtn{
+
+@keyframes slidein {
+    0% {
+        transform: translateY(-1em);
+        opacity: 0;
+    }
+    50%{
+        transform: translateY(-0.6em);
+        opacity: 0.1;
+    }
+    100% {
+        transform: translateY(-0em);
+        opacity: 1;
+    }
+}
+
+.divBtn {
     width: 3em;
     padding: 1em 2em;
     align-self: center;
@@ -64,9 +87,10 @@ p{
     color: black;
     border: 0.2em solid black
 }
-.divBtn:hover{
+
+.divBtn:hover {
     cursor: pointer;
-    border:0.2em dotted black
+    border: 0.2em dotted black
 }
 
 .refImage {
@@ -79,9 +103,10 @@ p{
     flex-direction: row-reverse;
 }
 
-.subHeadRef{
+.subHeadRef {
     color: #00BC8F;
 }
+
 h1 {
     font-size: 4em;
     font-weight: 800;
@@ -92,6 +117,7 @@ h2 {
     font-size: 2em;
     font-family: 'Overpass';
 }
+
 @media (max-width:1300px) {
     .referenceProject {
         flex-direction: column-reverse;
@@ -100,37 +126,45 @@ h2 {
         width: 90vw;
         height: auto;
     }
-    .infoRef{
+
+    .infoRef {
         display: flex;
         align-items: center;
     }
-    .info{
+
+    .info {
         width: 90%;
     }
-    .bgImage{
+
+    .bgImage {
         width: 100%;
         height: 60vw;
     }
-    .counter{
+
+    .counter {
         display: none;
     }
 }
+
 @media (max-width: 690px) {
     .refImage {
         width: 100%;
         height: auto;
     }
-    h1{
+
+    h1 {
         font-size: 2em;
     }
-    h2{
+
+    h2 {
         font-size: 1.2em;
     }
-    .referenceProject:hover {
-        .imageFrame {
-            display: none;
-        }
-    }
+
+    // .referenceProject:hover {
+    //     .imageFrame {
+    //         display: none;
+    //     }
+    // }
     .numberPositionLeft {
         justify-content: left;
     }
