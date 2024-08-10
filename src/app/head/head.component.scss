@@ -5,15 +5,12 @@ section {
     flex-direction: column;
     height: 100vh;
     font-family: 'overpass';
-    width: 100%;
+    // width: 100%;
 }
 .navbar {
     position: fixed;
     top: 3em;
-    left: 50%;
-    transform: translateX(-45%);
-    width: 100%;
-    z-index: 1;
+    z-index: 3;
 }
 .botSec{
     display: flex;

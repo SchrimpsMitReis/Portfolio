@@ -21,9 +21,9 @@ img{
 a{
     text-decoration: none;
     color:white;
-    p{
-        font-size: 2em;
-    }
+}
+p{
+    font-size: 2em;
 }
 
 .imprintLink{
@@ -33,9 +33,13 @@ a{
     width: 15em;
     gap: 1em;
 }
-@media (max-width: 450px) {
+@media (max-width: 550px) {
     section{
         flex-direction: column;
         gap: 0.5em;
     }
+    p{
+        font-size: 1.5em;
+    }
+
 }

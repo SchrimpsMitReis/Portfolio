@@ -10,8 +10,8 @@ section {
     color: black;
     width: 60%;
     height: 30%;
-    background-color: antiquewhite; 
-    border: 0.3em solid aquamarine;
+    background-color: #00BC8F; 
+    border: 0.3em solid #00BC8F;
     font-family: 'Overpass';
 }
 
@@ -27,10 +27,10 @@ button {
     background-color: rgba(127, 255, 212, 0.463);
     width: 15em;
     height: 3em;
-    border: 0.1em solid aquamarine;
+    border: 0.1em solid #00BC8F;
     font-size: 1em;
     &:hover {
-        background-color: aquamarine;
+        background-color: #00BC8F;
         cursor: pointer;
     }
 }
