@@ -16,7 +16,6 @@ export class HeadComponent implements OnChanges{
     this.showMenuTopic = this.menuSwitch.getSwitch();
   }
   callToAction(){
-    console.log("Send Nudes!");
     
   }
 

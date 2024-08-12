@@ -25,3 +25,20 @@ img{
   transition: opacity 0.3s ease-in-out;
   pointer-events: none; /* Optional, um Interaktionen zu verhindern, wenn unsichtbar */
 }
+
+a{
+    background-color:#FFFCF3 ;
+    border: 0.2em solid #00bc90;
+    padding: 0.6em;
+    border-radius: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &:hover{
+        filter: invert(1);
+        background-color: #FF436F;
+        border: 0.2em solid #00bc9000;
+
+    }
+
+}

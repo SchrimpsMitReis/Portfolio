@@ -26,8 +26,6 @@ export class DisclaimerComponent implements OnInit, OnChanges {
   ngOnInit(): void {
     this.setContent()
 
-    console.log("Disclaimer is there");
-    console.log(this)
   }
   ngOnChanges() {
   }

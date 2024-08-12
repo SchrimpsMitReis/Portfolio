@@ -12,7 +12,6 @@ export class MenuSwitch{
 
     burgerButton(){
         this.showMenu = !this.showMenu;
-        console.log("Burger klicked", this.showMenu);
     }
     getSwitch(){
         return this.showMenu;

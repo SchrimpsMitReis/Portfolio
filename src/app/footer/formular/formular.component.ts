@@ -54,7 +54,6 @@ export class FormularComponent implements OnInit{
   };
 
   onSubmit(ngForm: NgForm) {
-    // console.log("NgForm",ngForm.controls);
     if (this.contactData.policy) {
       if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
         this.http.post(this.post.endPoint, this.post.body(this.contactData))
@@ -90,7 +89,6 @@ export class FormularComponent implements OnInit{
     for (let i = 0; i < this.formInvalid.length; i++) {
       this.formInvalid[i] = false;
     }
-    console.log("Invalids", this.formInvalid);
     
   }
   clearInputs() {
