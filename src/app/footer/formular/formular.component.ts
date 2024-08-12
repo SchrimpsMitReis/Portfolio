@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { Component, inject, OnInit, ViewChild } from '@angular/core';
+import { Component, inject, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
 import { FormsModule, NgForm, NgModel } from '@angular/forms';
 import { DisclaimerComponent } from './disclaimer/disclaimer.component';
 
@@ -12,6 +12,7 @@ import { DisclaimerComponent } from './disclaimer/disclaimer.component';
   styleUrls: ['./formular.component.scss']
 })
 export class FormularComponent implements OnInit{
+  formInvalid: boolean[] = [false, false, false, false] // Name, Email, Text, policy
   heading!:string;
   headingGer: string = "Du hast eine Projekt-Idee?";
   headingEng: string = "Want to discuss a new project?";
@@ -29,7 +30,7 @@ export class FormularComponent implements OnInit{
   contactData = {
     name: "",
     email: "",
-    text: "",
+    message: "",
     policy: false
   }
 
@@ -53,6 +54,7 @@ export class FormularComponent implements OnInit{
   };
 
   onSubmit(ngForm: NgForm) {
+    // console.log("NgForm",ngForm.controls);
     if (this.contactData.policy) {
       if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
         this.http.post(this.post.endPoint, this.post.body(this.contactData))
@@ -65,7 +67,8 @@ export class FormularComponent implements OnInit{
               console.error(error);
             },
             complete: () => {
-              console.info('send post complete'),
+              console.info('send post complete')
+              this.clearInputs()
               this.disclaimer.show()
             }
           });
@@ -74,15 +77,28 @@ export class FormularComponent implements OnInit{
         ngForm.resetForm();
       }
     }else{
-      alert("You have Accept the Policy")
+      this.showInvalid(ngForm)
     }
   }
-
+  showInvalid(ngForm: NgForm){
+    this.formInvalid[0] = ngForm.controls['name'].invalid
+    this.formInvalid[1] = ngForm.controls['email'].invalid
+    this.formInvalid[2] = ngForm.controls['message'].invalid
+    this.formInvalid[3] = ngForm.controls['policy'].invalid
+  }
+  clearInvalid(){
+    for (let i = 0; i < this.formInvalid.length; i++) {
+      this.formInvalid[i] = false;
+    }
+    console.log("Invalids", this.formInvalid);
+    
+  }
   clearInputs() {
+    this.clearInvalid()
     this.contactData = {
       name: "",
       email: "",
-      text: "",
+      message: "",
       policy: false
     }
   }

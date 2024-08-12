@@ -1,10 +1,23 @@
-import { Routes } from '@angular/router';
+import { ExtraOptions, RouterModule, Routes } from '@angular/router';
 import { MainPageComponent } from './main-page/main-page.component';
 import { MenuOverlayComponent } from './menu-overlay/menu-overlay.component';
 import { ImprintComponent } from './imprint/imprint.component';
+import { NgModule } from '@angular/core';
 
 export const routes: Routes = [
-    {path: '', component: MainPageComponent},
-    {path: 'menu', component: MenuOverlayComponent},
-    {path: 'imprint', component: ImprintComponent},
-    ];
+    { path: '', component: MainPageComponent },
+    { path: 'menu', component: MenuOverlayComponent },
+    { path: 'imprint', component: ImprintComponent },
+];
+
+const routerOptions: ExtraOptions = {
+    anchorScrolling: 'enabled',
+    scrollPositionRestoration: 'enabled',  
+
+};
+
+@NgModule({
+    imports: [RouterModule.forRoot(routes, routerOptions)],
+    exports: [RouterModule]
+  })
+  export class AppRoutingModule { }

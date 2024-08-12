@@ -5,12 +5,19 @@ section {
     flex-direction: column;
     height: 100vh;
     font-family: 'overpass';
-    // width: 100%;
+    width: 100%;
+}
+.visible{
+    visibility: visible;
 }
 .navbar {
     position: fixed;
     top: 3em;
     z-index: 3;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    // visibility: hidden;
 }
 .botSec{
     display: flex;
@@ -20,8 +27,7 @@ section {
     width: 90%;  
     .emailLink{
         transform: rotateZ(-90deg) translateY(-5em);
-    }
-      
+    }  
 }
 .sendMes{
     font-size: 2em;
@@ -91,7 +97,6 @@ p {
 
     }
 }
-
 .callToAction {
     font-size: 1.4em;
     border: 0.2em solid black;

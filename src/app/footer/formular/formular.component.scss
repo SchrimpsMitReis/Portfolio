@@ -33,6 +33,12 @@ h2{
     font-size: 2.5em;
     line-height: 38.4px;
 }
+.nonValid::placeholder{
+    color: red;
+}
+.nonValidPolicy{
+    color: red;
+}
 .policy{
     margin-top: 1em;
 }

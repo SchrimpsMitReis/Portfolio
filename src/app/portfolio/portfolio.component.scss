@@ -5,9 +5,13 @@ section{
     justify-content: space-around;
     align-items: center;
     gap: 40px;
-    margin-top: 13em;
+    padding-top: 10em;
 }
-
+.referenz{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
 @media (max-width: 690px) {
     section{
         margin-top: 10em;

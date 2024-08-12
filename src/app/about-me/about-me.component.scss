@@ -13,6 +13,8 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-top: 10em;
+    padding-bottom: 5em;
     // width: 100%;
     // justify-content: space-between;
 }
@@ -91,12 +93,15 @@ p {
 .pfeil {
     object-fit: cover;
     width: 13em;
+    height: 13em;;
     // transform: translateX(--position-arrow);
-    transform: translateX(30vw);
+    transform: translateX(100%) translateY(50%);
     animation-name: arrowSide;
     animation-duration: 1s;
     animation-iteration-count: 1;
-
+    position: absolute;
+    top: 112em;
+    right: 30%;
 }
 
 @keyframes arrowSide {
@@ -130,7 +135,9 @@ p {
     .pfeil {
         transform: translate(0);
         width: 8em;
-
+        height: 8em;
+        top: 130em;
+        right: 10%;
     }
 
     h1 {
@@ -139,6 +146,11 @@ p {
     .textpart{
         width: 100%;
         line-height: 1.5em;
+    }
+}
+@media (max-width:900px) {
+    .pfeil{
+        display: none;
     }
 }
 @media (max-width: 690px) {

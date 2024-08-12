@@ -2,10 +2,9 @@
     display: flex;
     justify-content: space-between;
     flex-direction: row;
-    width: 90vw;
-    height: 27em;
+    width: 90%;
+    // height: 27em;
     filter: grayscale(100%);
-
     &:hover {
         filter: grayscale(0%);
 

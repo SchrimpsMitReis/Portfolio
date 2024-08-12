@@ -2,14 +2,23 @@
     <h2>{{heading}}</h2>
     <p>{{subHeading}}</p>
     <div class="inputs">
-        <input  required [(ngModel)]="contactData.name" name="name" class="textInput" type="text" placeholder="{{formFieldNames[0]}}" >
-        <input  required [(ngModel)]="contactData.email" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" name="email" class="textInput" type="email" placeholder="{{formFieldNames[1]}}">
-        <textarea  required #message="ngModel" [(ngModel)]="contactData.text" name="message" class="textInput" placeholder="{{formFieldNames[2]}}" id=""></textarea>
+        <!--  -->
+        <input 
+            [ngClass]="{'nonValid': formInvalid[0]}"
+            required 
+            [(ngModel)]="contactData.name" 
+            name="name" 
+            class="textInput" 
+            type="text" 
+            placeholder="{{formFieldNames[0]}}">
+
+        <input [ngClass]="{'nonValid': formInvalid[1]}" required [(ngModel)]="contactData.email" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" name="email" class="textInput" type="email" placeholder="{{formFieldNames[1]}}">
+        <textarea [ngClass]="{'nonValid': formInvalid[2]}" required #message="ngModel" [(ngModel)]="contactData.message" name="message" class="textInput" placeholder="{{formFieldNames[2]}}" id=""></textarea>
         
         
         <div class="policy">
             <input required [(ngModel)]="contactData.policy" name="policy" type="checkbox" id="policyCheck">
-            <span [innerHTML]="formFieldNames[3]"></span>
+            <span [ngClass]="{'nonValidPolicy': formInvalid[3]}" [innerHTML]="formFieldNames[3]"></span>
         </div>
     </div>
     @if (!message.valid && message.touched && !message.disabled) {

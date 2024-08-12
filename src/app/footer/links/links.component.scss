@@ -2,8 +2,9 @@ section{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 90vw;
     align-items: center;
+    width: 90vw;
+    
     font-size: 1em;
 }
 img{
@@ -25,6 +26,22 @@ a{
 p{
     font-size: 2em;
 }
+.btnUp{
+    background-image: url('./../../../assets/images/pfeil_dia.png');
+    // background-color: green;
+    background-size: cover;
+    filter: invert(1);
+    transform: translate(10em, -20em) rotate(135deg) scale(120%);
+    width: 4em;
+    height: 4em;
+    // border: 0.2em solid black;
+    align-self: center;
+    &:hover{
+        filter: invert(1);
+        filter: drop-shadow(0 0 5px white);
+        cursor: pointer;
+    }
+}
 
 .imprintLink{
     display: flex;
@@ -32,14 +49,25 @@ p{
     align-items: center;
     width: 15em;
     gap: 1em;
+    margin: 0;
 }
-@media (max-width: 550px) {
+@media (max-width: 1000px) {
+    .btnUp{
+        transform: translate(13em, -20em) rotate(135deg)scale(120%);
+    }
+}
+@media (max-width: 740px) {
+    .btnUp{
+        display: none;
+    }
+}
+@media (max-width: 600px) {
     section{
         flex-direction: column;
         gap: 0.5em;
+        margin-bottom: 4em;
     }
     p{
         font-size: 1.5em;
     }
-
 }

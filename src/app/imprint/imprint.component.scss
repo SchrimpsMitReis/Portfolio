@@ -1,7 +1,7 @@
 .container{
     font-family: 'Overpass';
     // width: 90%;
-    padding-left: 10%;
+    padding-left: 5%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -20,9 +20,9 @@ h1{
 .menu{
     position: fixed;
     top: 3em;
-    // width: 100%;
-    left: 50%;
-    transform: translate(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 @media (max-width: 350px) {
     .container{

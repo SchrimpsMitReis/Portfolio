@@ -1,9 +1,39 @@
+::-webkit-scrollbar{
+  width: 22px; /* Breite der vertikalen Scrollleiste */
+  height: 12px; /* Höhe der horizontalen Scrollleiste */
+}
+::-webkit-scrollbar-track{
+  background-color: #00BC8F;
+  border:0.1em solid black;
+  border-radius: 0.5em;
+}
+::-webkit-scrollbar-thumb{
+  width: 0.01em;
+  // height: 0.01em;
+  transform:translateX(1em);
+  background-color: black;
+  background-image: url('./assets/images/logo.png');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 0.1em solid #FFFCF3;
+  border-radius: 0.5em;
+  &:hover{
+    background-color: rgb(62, 62, 62);
+    cursor: pointer;
+  }
+}
+
+
+html{
+  scroll-behavior: smooth !important;
+}
 body {
   margin: 0;
   font-family: sans-serif;
   background-color: #FFFCF3;
-  // width: 100vw;
-  scroll-behavior: smooth;
+  max-width: 1920px;
+  
 }
 
 h1 {
