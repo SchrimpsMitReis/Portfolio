@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import { MenuSwitch } from '../../services/menuSwitch.service';
+import { Component, HostListener, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 @Component({
@@ -10,8 +9,28 @@ import { RouterModule } from '@angular/router';
   styleUrl: './menu-bar.component.scss'
 })
 export class MenuBarComponent {
+  @Input() visibility: boolean = true;
+  lastScroll: number = 0;
+  @HostListener('mousemove', ['$event'])
 
-  constructor(private menuSwitch: MenuSwitch){}
+  onMouseMove(event: MouseEvent) {
+    if (event && window.innerWidth >= 1000) {
+      this.visibility = true;
+
+    }
+  }
 
 
+  @HostListener('window:scroll', ['$event'])
+  onWindowScroll(event: Event) {
+    const scrollTop = window.scrollY
+    if (scrollTop > this.lastScroll) {
+      this.visibility = false;
+
+    } else {
+      this.visibility = true;
+
+    }
+    this.lastScroll = scrollTop
+  }
 }

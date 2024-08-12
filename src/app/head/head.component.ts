@@ -10,9 +10,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './head.component.scss'
 })
 export class HeadComponent implements OnChanges{
-  cursorPosition!: boolean;
   constructor(private menuSwitch: MenuSwitch){}
-
   showMenuTopic: boolean = false;
   ngOnChanges(){
     this.showMenuTopic = this.menuSwitch.getSwitch();
@@ -21,4 +19,5 @@ export class HeadComponent implements OnChanges{
     console.log("Send Nudes!");
     
   }
+
 }
