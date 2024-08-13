@@ -13,11 +13,12 @@ export const routes: Routes = [
 const routerOptions: ExtraOptions = {
     anchorScrolling: 'enabled',
     scrollPositionRestoration: 'enabled',  
-
+    scrollOffset: [0, 100], 
 };
 
 @NgModule({
     imports: [RouterModule.forRoot(routes, routerOptions)],
     exports: [RouterModule]
   })
-  export class AppRoutingModule { }
+
+export class AppRoutingModule { }

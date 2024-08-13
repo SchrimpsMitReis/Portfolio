@@ -3,6 +3,10 @@
     justify-content: space-between;
     flex-direction: row;
     width: 90%;
+    // transition: all 2s ease;
+    // animation: 1s ease-in-out 0s forwards slidein;
+    // animation-iteration-count: 1;
+
     // height: 27em;
     filter: grayscale(100%);
     &:hover {
@@ -10,7 +14,6 @@
 
     }
 }
-
 
 .bgImage {
     width: 40%;
@@ -35,22 +38,20 @@ a {
 }
 
 .infoRef {
-    display: none;
+    // display: none;
     flex-direction: column;
 }
 
-.referenceProject:hover {
-    .imageFrame {
-        display: block;
-    }
+// .referenceProject:hover {
+//     .imageFrame {
+//         // display: block;
+//     }
 
-    .infoRef {
-        display: flex;
-        animation: 1s ease-in-out 0s slidein;
-        animation-iteration-count: 1;
+//     .infoRef {
+//         // display: flex;
     
-    }
-}
+//     }
+// }
 
 p {
     font-family: 'Overpass';

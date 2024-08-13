@@ -1,19 +1,20 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, OnInit } from '@angular/core';
+import * as AOS from 'aos';
+import { AfterViewInit, Component, Input, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Project } from '../../models/project.model';
-
+// import { trigger, state, style, animate, transition } from '@angular/animations';
+// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @Component({
   selector: 'app-referenz',
   standalone: true,
-  imports: [CommonModule, ],
+  imports: [CommonModule],
   templateUrl: './referenz.component.html',
-  styleUrl: './referenz.component.scss'
+  styleUrl: './referenz.component.scss',
 })
-export class ReferenzComponent implements OnInit{
+export class ReferenzComponent implements OnInit, AfterViewInit{
   @Input() projIndex!: number;
   @Input() projectData!:Project;
   @Input() arrayLenth!: number;
-
   imageSrc!:string;
   indexToFrame!: number;
   width!: number;
@@ -29,8 +30,11 @@ export class ReferenzComponent implements OnInit{
   evenIndex!: boolean;
   index!: number;
   href!: string;
-  
+  // elementState = 'hidden';
+
   ngOnInit(){
+    AOS.init();
+    // this.getWindowOffset()    
     this.index = this.projIndex;
     this.direction = this.projIndex%2 === 0;
     this.fromProData()
@@ -38,6 +42,11 @@ export class ReferenzComponent implements OnInit{
     this.switchDirection()
     this.href = this.getProjectHref()
   }
+  ngAfterViewInit() {
+    AOS.refresh();
+    };
+
+
   formatNumber(number: number) : string{
     return number.toString().padStart(2, '0');
   }
@@ -76,5 +85,8 @@ export class ReferenzComponent implements OnInit{
   }
   getDescription(){
     return (this.getLang() === 'de') ? this.projectData.descriptionGer : this.projectData.descriptionEng;
+  }
+  getWindowOffset(){
+    
   }
 }
