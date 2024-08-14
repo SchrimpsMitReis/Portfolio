@@ -1,5 +1,5 @@
-<section>
-    <app-menu-bar class="navbar"></app-menu-bar>
+<section id="landing">
+    <app-menu-bar [targetInput]="'menu'" class="navbar"></app-menu-bar>
     <div class="title">
         <h1>Frontend Developer</h1>
         <div class="myName">
@@ -10,8 +10,8 @@
     </div>
     <p class="sendMes">Send&nbsp;a&nbsp;Message</p>
     <div class="botSec">
-        <a class="emailLink" href="#">roman.schroeder&#64;inclufilm.com</a>
-        <a href="/#aboutMe"><img class="scrolldown" id="scrollDownHead" src="./assets/images/Frame 58.png" alt=""></a>
+        <a class="emailLink" href="mailto:roman.schroeder@inclufilm.com">roman.schroeder&#64;inclufilm.com</a>
+        <a (click)="navigateToID('about', -100)"><img class="scrolldown" id="scrollDownHead" src="./assets/images/Frame 58.png" alt=""></a>
 
     </div>
 </section>

@@ -20,6 +20,14 @@ h1{
     display: flex;
     justify-content: center;
 }
+@media (max-width: 500px) {
+    .container{
+        padding-left: 5%;
+    }
+    h1{
+        font-size: 0.1em !important;
+    }
+}
 @media (max-width: 350px) {
     .container{
         padding-left: 5%;

@@ -3,8 +3,8 @@
     <div class="content">
         <div class="textpart">
             <p>{{text}}</p>
-            <a href="/#footer" class="borderBtn">
-                <p>Let's talk</p>
+            <a (click)="navigateToID('footer', -105)" class="borderBtn">
+                <p>{{actionBtn}}</p>
             </a>
         </div>
         <div class="portaitImage">
@@ -13,5 +13,5 @@
             </div>
         </div>
     </div>
-    <img class="pfeil" src="./assets/images/pfeil_dia.png" alt="">
+    <img (click)="navigateToID('skills', -100)" class="pfeil" src="./assets/images/pfeil_dia.png" alt="">
 </section>

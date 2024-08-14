@@ -18,11 +18,11 @@
         
         <div class="policy">
             <input required [(ngModel)]="contactData.policy" name="policy" type="checkbox" id="policyCheck">
-            <span [ngClass]="{'nonValidPolicy': formInvalid[3]}" [innerHTML]="formFieldNames[3]"></span>
+            <span [ngClass]="{'nonValidPolicy': formInvalid[3]}">{{formFieldNames[3]}} <a (click)="navigateToID('privacy', 150)">{{formFieldNames[4]}}</a>{{formFieldNames[5]}}</span>
         </div>
     </div>
     @if (!message.valid && message.touched && !message.disabled) {
-        <span>{{formFieldNames[4]}}</span>
+        <span>{{formFieldNames[6]}}</span>
     }
     <button type="submit" value="submit">{{btnText}}</button>
 </form>

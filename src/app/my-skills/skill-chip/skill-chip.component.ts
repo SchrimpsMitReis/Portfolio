@@ -13,10 +13,14 @@ export class SkillChipComponent implements OnInit {
 
   name!:string ;
   img!:string;
+
+
   ngOnInit(): void {
     this.name = this.capitalizeFirstLetter(this.prog);
     this.img = this.prog.toLowerCase()
   }
+
+  
   capitalizeFirstLetter(string:string) {
     if (!string) return string;
     return string.charAt(0).toUpperCase() + string.slice(1);

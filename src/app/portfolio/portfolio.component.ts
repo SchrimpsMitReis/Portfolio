@@ -15,9 +15,12 @@ import { ProjectService } from '../services/project.service';
 export class PortfolioComponent implements OnInit{
 
   projects: Project[] = []; 
+  
   constructor(private projectService: ProjectService){
 
   }
+
+
   ngOnInit(): void {
     this.projects = this.projectService.getProjects()
   }

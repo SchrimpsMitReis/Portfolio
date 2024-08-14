@@ -42,6 +42,8 @@ export class ReferenzComponent implements OnInit, AfterViewInit{
     this.switchDirection()
     this.href = this.getProjectHref()
   }
+
+
   ngAfterViewInit() {
     AOS.refresh();
     };
@@ -50,11 +52,15 @@ export class ReferenzComponent implements OnInit, AfterViewInit{
   formatNumber(number: number) : string{
     return number.toString().padStart(2, '0');
   }
+
+
   switchDirection(){
     if (this.direction){
       this.test = "switchDirec" 
     }
   }
+
+
   getKnowledge(project: Project){
     let textOutput: string = ""
     for (let i = 0; i < project.knowledge.length; i++) {
@@ -66,6 +72,8 @@ export class ReferenzComponent implements OnInit, AfterViewInit{
     }
     return textOutput
   }
+
+
   fromProData(){
     this.description = this.getDescription();
     this.title = this.projectData.title;
@@ -73,20 +81,25 @@ export class ReferenzComponent implements OnInit, AfterViewInit{
     this.knowledge = this.getKnowledge(this.projectData)
     this.imageSrc = `./assets/images/${this.projectData.title.toLowerCase()}Project.png`;
   }
+
+
   counterNumbers(){
     this.projectNumber = this.formatNumber(this.projIndex + 1)
     this.projectsLength = this.formatNumber(this.arrayLenth)
   }
+
+
   getProjectHref(){
     return `https://roman-schroeder.com/projekte/${this.projectData.title.toLowerCase()}/index.html`
   }
+
+
   getLang(){
     return navigator.language;
   }
+
+
   getDescription(){
     return (this.getLang() === 'de') ? this.projectData.descriptionGer : this.projectData.descriptionEng;
-  }
-  getWindowOffset(){
-    
   }
 }

@@ -17,7 +17,20 @@ img{
     display: flex;
     flex-direction: row;
     gap: 3em;
-
+    justify-content:flex-end;
+    align-items: center;
+  }
+.imprint{
+    font-family: 'Overpass';
+    letter-spacing: 1%;
+    margin: 0;
+    transform: scaleY(0.9);
+    font-weight: 800;
+    font-size: 1.5em;
+    &:hover{
+        cursor: pointer;
+        color: #00BC8F;
+    }
 }
 a{
     text-decoration: none;
@@ -50,23 +63,27 @@ p{
     width: 15em;
     gap: 1em;
     margin: 0;
+    &:hover{
+        cursor: pointer;
+    }
 }
 @media (max-width: 1000px) {
     .btnUp{
         transform: translate(13em, -20em) rotate(135deg)scale(120%);
     }
 }
-@media (max-width: 740px) {
+@media (max-width: 840px) {
+    section{
+        flex-direction: column;
+        gap: 1.5em;
+        margin-bottom: 4em;
+    }
     .btnUp{
         display: none;
     }
+
 }
 @media (max-width: 600px) {
-    section{
-        flex-direction: column;
-        gap: 0.5em;
-        margin-bottom: 4em;
-    }
     p{
         font-size: 1.5em;
     }

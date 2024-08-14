@@ -1,8 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { Component, inject, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, inject, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
 import { FormsModule, NgForm, NgModel } from '@angular/forms';
 import { DisclaimerComponent } from './disclaimer/disclaimer.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-formular',
@@ -20,22 +21,24 @@ export class FormularComponent implements OnInit{
   subHeadingGer:string = "Lass sie uns verwirklichen!";
   subHeadingEng:string = "Say hello! Let's discuss your ideas and make it happen";
   formFieldNames!: string[];
-  formFieldNamesGer: string[] = ["Ihr Name", "Ihre E-Mail Adresse", "Ihre Nachricht an mich","Ich habe die <a href='/imprint'>Datenschutzrichtlinien</a> gelesen und stimme mit ihnen zu", "Schreiben Sie eine Nachricht"];
-  formFieldNamesEng: string[] = ["Your Name", "Your E-Mail", "Your Message", "I've red the <a href='/imprint'>privacy policy</a> and agree to he processing of my data as outlined.", "Please Enter Message"];
+  formFieldNamesGer: string[] = ["Ihr Name", "Ihre E-Mail Adresse", "Ihre Nachricht an mich","Ich habe die ", "Datenschutzrichtlinien", " gelesen und stimme mit ihnen zu", "Schreiben Sie eine Nachricht"];
+  formFieldNamesEng: string[] = ["Your Name", "Your E-Mail", "Your Message", "I've red the ", "privacy policy", " and agree to he processing of my data as outlined.", "Please Enter Message"];
   btnText!: string;
   btnTextGer: string = "Absenden";
   btnTextEng: string = "Send it!";
   http = inject(HttpClient)
-
   contactData = {
     name: "",
     email: "",
     message: "",
     policy: false
   }
-
+  constructor(private router: Router) {
+    
+  }
   ngOnInit(): void {
     this.setLang()
+
   }
   @ViewChild('disclaimer') disclaimer!: DisclaimerComponent;
 
@@ -118,4 +121,41 @@ export class FormularComponent implements OnInit{
    
     }
   }
+
+  navigateToID(id: string, offset: number = 0) {
+    let page = this.findID(id)
+    this.router.navigate([`/${page}`]).then(() => {
+      setTimeout(() => {
+        this.scrollToElement(id, offset)
+      }, 100);
+    })
+  }
+
+  findID(id: string) {
+    let routePath: any = this.router.config;   
+    for (let i = 0; i < routePath.length; i++) {
+      const pageRoute = routePath[i];
+      for (let j = 0; j < pageRoute['component']['ɵcmp']['consts'].length; j++) {
+        const singleId = pageRoute['component']['ɵcmp']['consts'][j][1];
+        if (singleId === id) {
+          return routePath[i]['path']
+        }
+      }
+    }
+    return console.error(`There is no id='${id}' on this page! Check this Function`);
+
+  }
+
+  private scrollToElement(elementId: string, offset: number) {
+    const element = document.getElementById(elementId);
+    if (element) {
+      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+      const offsetPosition = elementPosition - offset;
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  }
+
 }

@@ -1,5 +1,6 @@
-<section>
-    <a [routerLink]="'/'" [fragment]="'about'"  >About me</a>
-    <a [routerLink]="'/'" [fragment]="'skills'" >My Skills</a>
-    <a [routerLink]="'/'" [fragment]="'portfolio'" >Portfolio</a>
+<section id="menu">
+    <a (click)="navigateToID('about', -100)"  >About me</a>
+    <a (click)="navigateToID('skills', -100)" >My Skills</a>
+    <a (click)="navigateToID('portfolio', -100)" >Portfolio</a>
+    <a (click)="navigateToID('footer', -200)" >Contact</a>
 </section>

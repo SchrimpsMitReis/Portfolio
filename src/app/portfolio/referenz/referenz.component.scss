@@ -3,15 +3,19 @@
     justify-content: space-between;
     flex-direction: row;
     width: 90%;
-    // transition: all 2s ease;
+    border: 0.1em solid #FFFCF3;
+    transition: all 3s ease;
     // animation: 1s ease-in-out 0s forwards slidein;
     // animation-iteration-count: 1;
 
     // height: 27em;
+    // box-shadow: 0 0 0.5em #00BC8F;
     filter: grayscale(100%);
     &:hover {
         filter: grayscale(0%);
-
+        transform: scale(1.05);
+        box-shadow: 0 0 1em #00BC8F;
+        cursor: pointer;
     }
 }
 

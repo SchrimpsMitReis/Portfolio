@@ -18,7 +18,11 @@ section {
     // width: 100%;
     // justify-content: space-between;
 }
-
+a{
+    &:hover{
+        cursor: pointer;
+    }
+}
 .content {
     display: flex;
     flex-direction: row;
@@ -102,6 +106,9 @@ p {
     position: absolute;
     top: 112em;
     right: 30%;
+    &:hover{
+        cursor: pointer;
+    }
 }
 
 @keyframes arrowSide {

@@ -8,17 +8,15 @@
     object-fit: cover;
     &:hover{
         color: #00BC8F;
+        animation-name: chipRotate;
+        animation-duration: 0.75s;
+        animation-iteration-count: 1;
+        animation-direction: alternate;
+
     }
     img{
         // width: 70px;
         height: 70px;
-        &:hover{
-            // background-color: #00BC8F;
-            animation-name: chipRotate;
-            animation-duration: 0.75s;
-            animation-iteration-count: 1;
-            animation-direction: alternate;
-        }
     }
 }
 @keyframes chipRotate {

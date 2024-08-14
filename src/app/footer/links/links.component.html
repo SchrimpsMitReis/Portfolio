@@ -1,12 +1,13 @@
 <section>
-    <a [routerLink]="'/imprint'" class="imprintLink">
+    <a (click)="navigateToID('head')"class="imprintLink">
         <img class="logo" src="./assets/images/logo.png" alt="">
         <p>Roman&nbsp;Schröder</p>
     </a>
+    <a class="imprint" (click)="navigateToID('imprint', 200)">Imprint</a>
     <div class="shareBtns">
-        <a href="#head" class="btnUp"></a>
+        <a (click)="navigateToID('head')" class="btnUp"></a>
         <a href="https://github.com/SchrimpsMitReis" target="_blank"><img src="./assets/images/GithubCat.png" alt=""></a>
-        <a href="roman.schroeder@inclufilm.com" target="_blank"><img src="./assets/images/EMail.png" alt=""></a>
+        <a href="mailto:roman.schroeder@inclufilm.com" target="_blank"><img src="./assets/images/EMail.png" alt=""></a>
         <a href="http://"><img src="./assets/images/LinkedIn.png" alt=""></a>
     </div>
 </section>

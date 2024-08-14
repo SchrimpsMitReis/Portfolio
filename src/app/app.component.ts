@@ -17,6 +17,8 @@ import * as AOS from 'aos';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
+
+
 export class AppComponent implements OnInit{
   title = 'Portfolio';
 
