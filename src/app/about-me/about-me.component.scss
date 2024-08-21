@@ -15,8 +15,6 @@ section {
     align-items: center;
     padding-top: 10em;
     padding-bottom: 5em;
-    // width: 100%;
-    // justify-content: space-between;
 }
 a{
     &:hover{
@@ -98,7 +96,6 @@ p {
     object-fit: cover;
     width: 13em;
     height: 13em;;
-    // transform: translateX(--position-arrow);
     transform: translateX(100%) translateY(50%);
     animation-name: arrowSide;
     animation-duration: 1s;
@@ -161,19 +158,8 @@ p {
     }
 }
 @media (max-width: 690px) {
-    :host {
-        // --font-size-heading: 3.4em;
-        // --position-arrow: 110em;
-    }
     .portaitImage:hover .hoverFrame{
         display: none;
-    }
-    .content {
-        // flex-direction: column;
-        // justify-content: center;
-        // gap: 6em;
-        // align-items: center;
-
     }
 
     .borderBtn {

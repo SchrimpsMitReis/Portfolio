@@ -2,8 +2,7 @@ import { CommonModule } from '@angular/common';
 import * as AOS from 'aos';
 import { AfterViewInit, Component, Input, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Project } from '../../models/project.model';
-// import { trigger, state, style, animate, transition } from '@angular/animations';
-// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 @Component({
   selector: 'app-referenz',
   standalone: true,
@@ -11,6 +10,7 @@ import { Project } from '../../models/project.model';
   templateUrl: './referenz.component.html',
   styleUrl: './referenz.component.scss',
 })
+
 export class ReferenzComponent implements OnInit, AfterViewInit{
   @Input() projIndex!: number;
   @Input() projectData!:Project;
@@ -30,11 +30,9 @@ export class ReferenzComponent implements OnInit, AfterViewInit{
   evenIndex!: boolean;
   index!: number;
   href!: string;
-  // elementState = 'hidden';
 
   ngOnInit(){
     AOS.init();
-    // this.getWindowOffset()    
     this.index = this.projIndex;
     this.direction = this.projIndex%2 === 0;
     this.fromProData()

@@ -27,15 +27,23 @@
 
 html{
   scroll-behavior: smooth !important;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+
 }
 body {
   margin: 0;
-  font-family: sans-serif;
+  // font-family: sans-serif;
   background-color: #FFFCF3;
   max-width: 1920px;
   
 }
+p{
+  text-align: justify;
 
+}
 h1 {
   font-family: 'Syne';
   letter-spacing: 1%;

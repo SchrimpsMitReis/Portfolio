@@ -1,7 +1,6 @@
 import { Component, HostListener, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Router, RouterLink } from '@angular/router';
-// import { routes } from '../../app.routes';
 @Component({
   selector: 'app-menu-bar',
   standalone: true,

@@ -3,10 +3,16 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: 90%;
+    width: 80%;
+    background-color: #000000;
+    padding-left: 3em;
+    padding-right: 3em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    border:0.2em solid #00bc9088;
+    border-radius: 1em;
 }
 img{
-    // width: 60px;
     height: 2em;
     &:hover{
         cursor: pointer;
@@ -23,7 +29,7 @@ img{
 .invisible {
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
-  pointer-events: none; /* Optional, um Interaktionen zu verhindern, wenn unsichtbar */
+  pointer-events: none; 
 }
 
 a{

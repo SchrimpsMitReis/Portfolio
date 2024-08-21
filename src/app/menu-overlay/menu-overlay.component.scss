@@ -1,9 +1,19 @@
 
-.menu{
+.menu {
     position: fixed;
     top: 3em;
-    width: 100%;
-    left: 55%;
-    transform: translate(-50%);
     z-index: 3;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    // position: fixed;
+    // top: 3em;
+    // width: 100%;
+    left: 50%;
+    transform: translate(-50%);
+    // z-index: 3;
+}
+.content{
+    margin-top: 10em;
+    font-family: 'Syne';
 }

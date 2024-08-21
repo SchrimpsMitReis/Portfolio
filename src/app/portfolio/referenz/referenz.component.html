@@ -5,6 +5,7 @@
         </div>
     </div>
     <div class="info">
+        <h2 class="counter" [ngClass]="direction ? 'h2Left' : 'h2Right'">{{ projectNumber }}/{{projectsLength}}</h2>
         <div class="infoRef" [ngClass]="direction ? 'numberPositionLeft' : 'numberPositionRight'">
                 <h1>{{title}}</h1>
                 <h2 class="subHeadRef">{{knowledge}}</h2>
@@ -14,6 +15,5 @@
 
         </div>
     </div>
-    <h2 class="counter">{{ projectNumber }}/{{projectsLength}}</h2>
 
 </a>

@@ -19,6 +19,7 @@ section {
         &:hover{
             color: #00BC8F;
             filter: drop-shadow(-0.01em 0.01em 0.001em #00BC8F) ;
+            cursor: pointer;
         }
     }
 }

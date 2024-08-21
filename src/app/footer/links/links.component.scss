@@ -19,6 +19,7 @@ img{
     gap: 3em;
     justify-content:flex-end;
     align-items: center;
+    width: 33%;
   }
 .imprint{
     font-family: 'Overpass';
@@ -27,6 +28,8 @@ img{
     transform: scaleY(0.9);
     font-weight: 800;
     font-size: 1.5em;
+    width: 33%;
+    text-align: center;
     &:hover{
         cursor: pointer;
         color: #00BC8F;
@@ -40,18 +43,14 @@ p{
     font-size: 2em;
 }
 .btnUp{
-    background-image: url('./../../../assets/images/pfeil_dia.png');
-    // background-color: green;
+    background-image: url('./../../../assets/images/pfeil_dia_green.png');
     background-size: cover;
-    filter: invert(1);
     transform: translate(10em, -20em) rotate(135deg) scale(120%);
     width: 4em;
     height: 4em;
-    // border: 0.2em solid black;
     align-self: center;
     &:hover{
-        filter: invert(1);
-        filter: drop-shadow(0 0 5px white);
+        filter: drop-shadow(0 0 15px #00BC8F)  drop-shadow(0 0 5px #00BC8F)  ;
         cursor: pointer;
     }
 }
@@ -60,7 +59,7 @@ p{
     display: flex;
     flex-direction: row;
     align-items: center;
-    width: 15em;
+    width: 33%;
     gap: 1em;
     margin: 0;
     &:hover{

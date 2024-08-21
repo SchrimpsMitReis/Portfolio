@@ -7,9 +7,11 @@ section {
     font-family: 'overpass';
     width: 100%;
 }
-.visible{
+
+.visible {
     visibility: visible;
 }
+
 .navbar {
     position: fixed;
     top: 3em;
@@ -17,24 +19,27 @@ section {
     width: 100%;
     display: flex;
     justify-content: center;
-    // visibility: hidden;
 }
-.botSec{
+
+.botSec {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: 90%;  
-    .emailLink{
+    width: 90%;
+
+    .emailLink {
         transform: rotateZ(-90deg) translateY(-5em);
-    }  
+    }
 }
-.sendMes{
+
+.sendMes {
     font-size: 2em;
     border: 0.2em solid black;
     padding: 0.5em 1em 0.5em 1em;
     visibility: hidden;
 }
+
 .title {
     display: flex;
     justify-content: center;
@@ -80,33 +85,36 @@ p {
 }
 
 @keyframes scrollDownAnim {
-    0%{
+    0% {
         transform: translateY(-100%) scale(0.8);
         opacity: 50%;
         filter: blur(1em);
     }
-    50%{
+
+    50% {
         transform: translateY(0%) scale(1.2);
         opacity: 100%;
         filter: blur(0);
     }
-    100%{
+
+    100% {
         transform: translateY(100%) scale(0.8);
         opacity: 50%;
         filter: blur(1em);
 
     }
 }
+
 .callToAction {
     font-size: 1.4em;
     border: 0.2em solid black;
     padding: 0.5em 1.0em 0.5em 1.0em;
     text-align: center;
     display: none;
-    margin-top: 5em;
+    // margin-top: 5em;
 }
 
-a{
+a {
     text-decoration: none;
     color: black;
     margin: 0;
@@ -136,10 +144,12 @@ a{
         position: static;
         width: 6em;
     }
-    .callToAction{
+
+    .callToAction {
         display: flex;
     }
-    .emailLink{
+
+    .emailLink {
         transform: translateX(-100em);
     }
 }
@@ -156,6 +166,14 @@ a{
 }
 
 @media (max-width: 400px) {
+    .callToAction {
+        margin-top: 0;
+    }
+
+    section {
+        padding-top: 4em;
+    }
+
     h1 {
         font-size: 2em;
     }

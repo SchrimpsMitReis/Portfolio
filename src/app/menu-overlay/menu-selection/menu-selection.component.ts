@@ -11,10 +11,12 @@ import { RouterLink, RouterModule,Router } from '@angular/router';
 })
 export class MenuSelectionComponent {
 
-
+  contactOffset:number = this.respContactOffset();
   constructor(private router: Router){}
 
   navigateToID(id: string, offset: number = 0) {
+    console.log(this.contactOffset);
+    
     let page = this.findID(id)
     this.router.navigate([`/${page}`]).then(() => {
       setTimeout(() => {
@@ -50,5 +52,20 @@ export class MenuSelectionComponent {
     }
   }
 
+  respContactOffset():number{
 
+    let offset: number = -200;
+
+    if (window.innerWidth <= 360){
+      offset = -60;
+    }
+
+    console.log(window.innerWidth);
+    
+    
+    
+        
+    
+    return offset
+  }
 }
