@@ -10,7 +10,7 @@
                 <h1>{{title}}</h1>
                 <h2 class="subHeadRef">{{knowledge}}</h2>
                 <p>{{description}}</p>
-                <a href="{{gitURL}}" target="_blank" [ngClass]="direction ? 'slideLeft' : 'slideRight'"
+                <a href="{{gitURL}}" target="_blank" *ngIf="gitURL" [ngClass]="direction ? 'slideLeft' : 'slideRight'"
                     class="divBtn">Github</a>
 
         </div>

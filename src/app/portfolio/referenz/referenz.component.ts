@@ -24,7 +24,7 @@ export class ReferenzComponent implements OnInit, AfterViewInit{
   direction!: boolean;
   knowledge!: string;
   title!: string;
-  gitURL!: string;
+  gitURL!: string | undefined;
   description!: string;
   projectsLength!: string;
   evenIndex!: boolean;

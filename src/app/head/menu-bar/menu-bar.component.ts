@@ -16,6 +16,7 @@ export class MenuBarComponent implements OnInit {
   @Input() targetInput: string = 'menu';
   lastScroll: number = 0;
   targetOutput!: string;
+  lastHover!: any;
 
   constructor(private router: Router) {
 
@@ -23,7 +24,7 @@ export class MenuBarComponent implements OnInit {
 
   ngOnInit(): void {
     this.targetOutput = this.targetInput;
-
+    this.checkHover()
   }
 
 
@@ -78,14 +79,26 @@ export class MenuBarComponent implements OnInit {
       });
     }
   }
+  checkHover() {
+    setInterval(() => {
+      if (this.notHovered()) {
+        this.visibility = false
+      }
+    }, 2000)
+  }
+  notHovered() {    
+    return (this.lastHover < Date.now())
+  }
 
 
   @HostListener('mousemove', ['$event'])
   onMouseMove(event: MouseEvent) {
     if (event && window.innerWidth >= 1000) {
       this.visibility = true;
-
+      this.lastHover = Date.now()
+      
     }
+
   }
 
 

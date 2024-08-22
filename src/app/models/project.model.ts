@@ -4,6 +4,6 @@ export class Project {
         public descriptionGer: string,
         public descriptionEng:string,
         public knowledge: string[],
-        public gitLink: string = "https://github.com/SchrimpsMitReis",
+        public gitLink: string | undefined,
     ){}
 }

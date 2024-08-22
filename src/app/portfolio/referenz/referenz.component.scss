@@ -5,6 +5,7 @@
     width: 90%;
     border: 0.1em solid #FFFCF3;
     transition: all 3s ease;
+    margin-bottom: 0.5em;
     filter: grayscale(100%);
     &:hover {
         filter: grayscale(0%);
