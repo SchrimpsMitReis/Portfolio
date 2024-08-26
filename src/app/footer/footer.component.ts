@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FormularComponent } from './formular/formular.component';
 import { LinksComponent } from './links/links.component';
 
@@ -10,5 +10,5 @@ import { LinksComponent } from './links/links.component';
   styleUrl: './footer.component.scss'
 })
 export class FooterComponent {
-
+  @Input() seeFormFooter: boolean = false;
 }

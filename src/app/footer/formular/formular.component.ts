@@ -1,9 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { AfterViewInit, Component, inject, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, inject, Input, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
 import { FormsModule, NgForm, NgModel } from '@angular/forms';
 import { DisclaimerComponent } from './disclaimer/disclaimer.component';
 import { Router } from '@angular/router';
+import { MainPageComponent } from '../../main-page/main-page.component';
+import { log } from 'console';
 
 @Component({
   selector: 'app-formular',
@@ -13,6 +15,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./formular.component.scss']
 })
 export class FormularComponent implements OnInit{
+  @Input() seeForm: boolean = false;
   formInvalid: boolean[] = [false, false, false, false] // Name, Email, Text, policy
   heading!:string;
   headingGer: string = "Du hast eine Projekt-Idee?";
@@ -26,6 +29,7 @@ export class FormularComponent implements OnInit{
   btnText!: string;
   btnTextGer: string = "Absenden";
   btnTextEng: string = "Send it!";
+  
   http = inject(HttpClient)
   contactData = {
     name: "",
@@ -38,7 +42,7 @@ export class FormularComponent implements OnInit{
   }
   ngOnInit(): void {
     this.setLang()
-
+    
   }
   @ViewChild('disclaimer') disclaimer!: DisclaimerComponent;
 
@@ -82,6 +86,11 @@ export class FormularComponent implements OnInit{
       this.showInvalid(ngForm)
     }
   }
+
+  // onMain(): boolean{
+  //   return instanceof MainPageComponent
+  // }
+
   showInvalid(ngForm: NgForm){
     this.formInvalid[0] = ngForm.controls['name'].invalid
     this.formInvalid[1] = ngForm.controls['email'].invalid
