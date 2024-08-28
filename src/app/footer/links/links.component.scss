@@ -17,7 +17,7 @@ img{
     display: flex;
     flex-direction: row;
     gap: 3em;
-    justify-content:flex-end;
+    justify-content:center;
     align-items: center;
     width: 33%;
   }
@@ -67,6 +67,10 @@ p{
     }
 }
 @media (max-width: 1000px) {
+    .imprintLink{
+            transform: translateX(-4vw);
+
+    }
     .btnUp{
         transform: translate(13em, -20em) rotate(135deg)scale(120%);
     }
@@ -88,5 +92,15 @@ p{
     }
     a{
         width: 100%;
+    }
+    .imprintLink{
+        transform: translateX(-12vw);
+
+    }
+}
+@media (max-width: 400px) {
+    .imprintLink{
+        transform: translateX(-20vw);
+
     }
 }

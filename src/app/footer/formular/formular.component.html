@@ -1,16 +1,18 @@
-<form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm" *ngIf="seeForm">
+<form id="nameInput"  (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm" *ngIf="seeForm">
     <h2>{{heading}}</h2>
     <p>{{subHeading}}</p>
     <div class="inputs">
-        <!--  -->
+        <!-- -->
         <input 
+            
             [ngClass]="{'nonValid': formInvalid[0]}"
-            required 
+            required  
             [(ngModel)]="contactData.name" 
             name="name" 
             class="textInput" 
             type="text" 
-            placeholder="{{formFieldNames[0]}}">
+            placeholder="{{formFieldNames[0]}}"
+            >
 
         <input [ngClass]="{'nonValid': formInvalid[1]}" required [(ngModel)]="contactData.email" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" name="email" class="textInput" type="email" placeholder="{{formFieldNames[1]}}">
         <textarea [ngClass]="{'nonValid': formInvalid[2]}" required #message="ngModel" [(ngModel)]="contactData.message" name="message" class="textInput" placeholder="{{formFieldNames[2]}}" id=""></textarea>
@@ -24,6 +26,6 @@
     @if (!message.valid && message.touched && !message.disabled) {
         <span>{{formFieldNames[6]}}</span>
     }
-    <button type="submit" value="submit">{{btnText}}</button>
+    <button [disabled]="btnDisabled" id="submit" type="submit" value="submit">{{btnText}}</button>
 </form>
 <app-disclaimer #disclaimer (closed)="onDisclaimerClosed()" ></app-disclaimer>

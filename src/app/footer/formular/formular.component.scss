@@ -68,6 +68,11 @@ button{
         cursor: pointer;
         border-color: black;
     }
+    &:disabled{
+        background-color: #9c0424;
+        cursor: no-drop;
+        color: #FFFCF3;
+    }
 }
 span{
     font-family: 'Overpass' sans-serif;

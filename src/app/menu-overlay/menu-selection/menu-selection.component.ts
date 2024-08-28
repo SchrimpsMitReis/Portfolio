@@ -15,7 +15,6 @@ export class MenuSelectionComponent {
   constructor(private router: Router){}
 
   navigateToID(id: string, offset: number = 0) {
-    console.log(this.contactOffset);
     
     let page = this.findID(id)
     this.router.navigate([`/${page}`]).then(() => {
@@ -59,13 +58,6 @@ export class MenuSelectionComponent {
     if (window.innerWidth <= 360){
       offset = -60;
     }
-
-    console.log(window.innerWidth);
-    
-    
-    
-        
-    
     return offset
   }
 }

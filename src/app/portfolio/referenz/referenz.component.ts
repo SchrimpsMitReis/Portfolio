@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import * as AOS from 'aos';
+import AOS from 'aos';
 import { AfterViewInit, Component, Input, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Project } from '../../models/project.model';
 
