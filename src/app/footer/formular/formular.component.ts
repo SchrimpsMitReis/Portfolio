@@ -31,6 +31,7 @@ export class FormularComponent implements OnInit {
   btnTextGer: string = "Absenden";
   btnTextEng: string = "Send it!";
   http = inject(HttpClient)
+
   contactData = {
     name: "",
     email: "",
@@ -39,46 +40,8 @@ export class FormularComponent implements OnInit {
   }
   formular!: HTMLElement | null;
   btnDisabled: boolean = true;
+
   @ViewChild('contactForm') contactForm!: NgForm;
-  constructor(private router: Router, private fb: FormBuilder) {
-  }
-
-
-  ngOnInit(): void {
-    this.setLang()
-    this.setEventlistener()
-
-
-  }
-
-  setEventlistener() {
-    const events = ['keypress', 'click']
-    setTimeout(() => {
-      this.formular = document.getElementById('nameInput');
-      if (this.formular) {
-        this.formular.addEventListener('keypress', (event) => {
-          this.enableBtn()
-        })
-        this.formular.addEventListener('click', (event) => {
-          this.enableBtn()
-        })
-
-      };
-    }, 100)
-  }
-
-
-
-  enableBtn() {
-    setTimeout(() => {
-      if (this.contactForm.form.valid && this.contactForm.value.policy) {
-        this.btnDisabled = false
-
-      } else {
-        this.btnDisabled = true
-      }
-    }, 100)
-  }
 
   @ViewChild('disclaimer') disclaimer!: DisclaimerComponent;
 
@@ -95,6 +58,46 @@ export class FormularComponent implements OnInit {
       },
     },
   };
+
+
+  constructor(private router: Router, private fb: FormBuilder) {
+  }
+
+
+  ngOnInit(): void {
+    this.setLang()
+    this.setEventlistener()
+
+
+  }
+
+  setEventlistener() {
+    setTimeout(() => {
+      this.formular = document.getElementById('nameInput');
+      if (this.formular) {
+        this.formular.addEventListener('keypress', (event) => {
+          this.enableBtn()
+        })
+        this.formular.addEventListener('click', (event) => {
+          this.enableBtn()
+        })
+
+      };
+    }, 100)
+  }
+
+  enableBtn() {
+    setTimeout(() => {
+      if (this.contactForm.form.valid && this.contactForm.value.policy) {
+        this.btnDisabled = false
+
+      } else {
+        this.btnDisabled = true
+      }
+    }, 100)
+  }
+
+  onDisclaimerClosed(){}
 
   onSubmit(ngForm: NgForm) {
     if (this.contactData.policy) {
@@ -123,19 +126,19 @@ export class FormularComponent implements OnInit {
     }
   }
 
-
   showInvalid(ngForm: NgForm) {
     this.formInvalid[0] = ngForm.controls['name'].invalid
     this.formInvalid[1] = ngForm.controls['email'].invalid
     this.formInvalid[2] = ngForm.controls['message'].invalid
     this.formInvalid[3] = ngForm.controls['policy'].invalid
   }
+
   clearInvalid() {
     for (let i = 0; i < this.formInvalid.length; i++) {
       this.formInvalid[i] = false;
     }
-
   }
+
   clearInputs() {
     this.clearInvalid()
     this.contactData = {
@@ -145,10 +148,11 @@ export class FormularComponent implements OnInit {
       policy: false
     }
   }
-  onDisclaimerClosed() { }
+
   getLang() {
     return navigator.language;
   }
+
   setLang() {
     if (this.getLang() == 'de') {
       this.heading = this.headingGer;
